@@ -5,7 +5,7 @@
  */
 package internalPages;
 
-import myapp.adddel;
+import myapp.product_tbl;
 import java.awt.Color;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
@@ -156,9 +156,11 @@ public class dashBoardPage extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_logoutMouseExited
 
     private void manageuserMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_manageuserMouseClicked
-        adddel sf = new adddel();
+        product_tbl sf = new product_tbl();
         sf.setVisible(true);
-        this.dispose();
+         this.setVisible(false);
+           this.setDefaultCloseOperation(this.HIDE_ON_CLOSE);
+           this.dispose();
         
     }//GEN-LAST:event_manageuserMouseClicked
          

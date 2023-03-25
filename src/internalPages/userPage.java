@@ -390,7 +390,8 @@ public class userPage extends javax.swing.JInternalFrame {
          ctp.setText(null);
          cname.setText(null);
          corder.setText(null);
-         corder.setText(null);
+         cid.setText(null);
+         cadd.setText(null);
             
     }//GEN-LAST:event_clearMouseClicked
 
@@ -454,19 +455,25 @@ public class userPage extends javax.swing.JInternalFrame {
 
     private void insertDataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_insertDataMouseClicked
         dbconnector dbc = new dbconnector();
-        dbc.insertData("INSERT INTO customer_tbl (c_id, c_name, c_add, c_order, c_tp) "
-                + "VALUES ('"+cid.getText()+"', '"+cname.getText()+"','"+cadd.getText()+"','"+corder.getText()+"','"+ctp.getText()+"')");
+        dbc.insertData("INSERT INTO customer_tbl ( c_name, c_add, c_order, c_tp) "
+                + "VALUES ( '"+cname.getText()+"','"+cadd.getText()+"','"+corder.getText()+"','"+ctp.getText()+"')");
         displayData();
         reset();
     }//GEN-LAST:event_insertDataMouseClicked
 
     private void customer_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_customer_tblMouseClicked
-       int selectedRow = customer_tbl.getSelectedRow();
-       DefaultTableModel model = (DefaultTableModel) customer_tbl.getModel();
-       ctp.setText(model.getValueAt(selectedRow, 0).toString());
-       cname.setText(model.getValueAt(selectedRow, 1).toString());
-       corder.setText(model.getValueAt(selectedRow, 2).toString());
-       corder.setText(model.getValueAt(selectedRow, 3).toString());
+      int rowIndex = customer_tbl.getSelectedRow();
+      if(rowIndex < 0){
+          
+      }else{
+          TableModel model = customer_tbl.getModel();
+          cid.setText(""+model.getValueAt(rowIndex, 0));
+          cname.setText(""+model.getValueAt(rowIndex, 1));
+          cadd.setText(""+model.getValueAt(rowIndex, 2));
+          corder.setText(""+model.getValueAt(rowIndex, 3));
+          ctp.setText(""+model.getValueAt(rowIndex, 4));
+          
+      }
        
     }//GEN-LAST:event_customer_tblMouseClicked
 

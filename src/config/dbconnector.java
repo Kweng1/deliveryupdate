@@ -78,6 +78,23 @@ public class dbconnector {
        
         return num;
     }
+    
+    public void deletedata(int id) {
+    try {
+        PreparedStatement stmt = connection.prepareStatement("DELETE FROM product_tbl WHERE p_id = ?");
+        stmt.setInt(1, id);
+        int rowsDeleted = stmt.executeUpdate();
+        if (rowsDeleted > 0) {
+            System.out.println(rowsDeleted + " rows were deleted.");
+        } else {
+            System.out.println("No rows were deleted.");
+        }
+        stmt.close();
+        connection.close();
+    } catch (SQLException e) {
+        System.out.println("Error deleting data: " + e.getMessage());
+    }
+}
    
      
 }
