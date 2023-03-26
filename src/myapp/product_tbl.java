@@ -52,8 +52,8 @@ public class product_tbl extends javax.swing.JFrame {
     }
      
        Color navcolor= new Color(204,204,204);
-    Color headcolor= new Color(153,153,153);
-    Color bodycolor = new Color(153,153,255);
+    Color headcolor= new Color(0,255,204);
+    Color bodycolor = new Color(0,204,102);
     
 
     
