@@ -89,10 +89,10 @@ public class product_tbl extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel1.setBackground(new java.awt.Color(1, 121, 111));
         jPanel1.setLayout(null);
 
-        product_tbl.setBackground(new java.awt.Color(204, 204, 204));
+        product_tbl.setBackground(new java.awt.Color(0, 255, 204));
         product_tbl.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 product_tblMouseClicked(evt);
@@ -101,9 +101,9 @@ public class product_tbl extends javax.swing.JFrame {
         jScrollPane1.setViewportView(product_tbl);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(482, 0, 440, 470);
+        jScrollPane1.setBounds(482, 20, 430, 430);
 
-        add.setBackground(new java.awt.Color(153, 153, 153));
+        add.setBackground(new java.awt.Color(0, 255, 204));
         add.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         add.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -124,9 +124,9 @@ public class product_tbl extends javax.swing.JFrame {
         add.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 80, 20));
 
         jPanel1.add(add);
-        add.setBounds(10, 110, 80, 40);
+        add.setBounds(20, 110, 80, 40);
 
-        update.setBackground(new java.awt.Color(153, 153, 153));
+        update.setBackground(new java.awt.Color(0, 255, 204));
         update.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         update.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -147,9 +147,9 @@ public class product_tbl extends javax.swing.JFrame {
         update.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 80, 20));
 
         jPanel1.add(update);
-        update.setBounds(100, 110, 80, 40);
+        update.setBounds(110, 110, 80, 40);
 
-        delete.setBackground(new java.awt.Color(153, 153, 153));
+        delete.setBackground(new java.awt.Color(0, 255, 204));
         delete.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         delete.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -170,9 +170,9 @@ public class product_tbl extends javax.swing.JFrame {
         delete.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 80, 20));
 
         jPanel1.add(delete);
-        delete.setBounds(190, 110, 80, 40);
+        delete.setBounds(200, 110, 80, 40);
 
-        clear.setBackground(new java.awt.Color(153, 153, 153));
+        clear.setBackground(new java.awt.Color(0, 255, 204));
         clear.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         clear.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -193,9 +193,9 @@ public class product_tbl extends javax.swing.JFrame {
         clear.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 80, 20));
 
         jPanel1.add(clear);
-        clear.setBounds(280, 110, 80, 40);
+        clear.setBounds(290, 110, 80, 40);
 
-        refresh.setBackground(new java.awt.Color(153, 153, 153));
+        refresh.setBackground(new java.awt.Color(0, 255, 204));
         refresh.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         refresh.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -216,49 +216,44 @@ public class product_tbl extends javax.swing.JFrame {
         refresh.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 80, 20));
 
         jPanel1.add(refresh);
-        refresh.setBounds(370, 110, 80, 40);
+        refresh.setBounds(380, 110, 80, 40);
 
-        pname.setBackground(new java.awt.Color(153, 153, 153));
         pname.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jPanel1.add(pname);
         pname.setBounds(160, 270, 250, 30);
 
-        ps.setBackground(new java.awt.Color(153, 153, 153));
         ps.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jPanel1.add(ps);
         ps.setBounds(160, 320, 250, 30);
 
-        pm.setBackground(new java.awt.Color(153, 153, 153));
         pm.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jPanel1.add(pm);
         pm.setBounds(160, 370, 250, 30);
 
-        pl.setBackground(new java.awt.Color(153, 153, 153));
         pl.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jPanel1.add(pl);
         pl.setBounds(160, 420, 250, 30);
 
-        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel2.setText("PRODUCT NAME:");
         jPanel1.add(jLabel2);
         jLabel2.setBounds(30, 270, 130, 30);
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel3.setText("P_ID:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(100, 220, 60, 30);
+        jLabel3.setBounds(30, 220, 60, 30);
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel4.setText("MEDIUM:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(80, 370, 70, 30);
+        jLabel4.setBounds(30, 370, 70, 30);
 
-        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel5.setText("LARGE:");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(90, 420, 60, 30);
+        jLabel5.setBounds(30, 420, 60, 30);
 
-        pid.setBackground(new java.awt.Color(153, 153, 153));
         pid.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         pid.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -268,15 +263,15 @@ public class product_tbl extends javax.swing.JFrame {
         jPanel1.add(pid);
         pid.setBounds(160, 220, 250, 30);
 
-        jLabel6.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel6.setText("SMALL:");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(90, 320, 60, 30);
+        jLabel6.setBounds(30, 320, 60, 30);
 
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 24)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel1.setText("PRODUCT LIST");
         jPanel1.add(jLabel1);
-        jLabel1.setBounds(160, 40, 170, 40);
+        jLabel1.setBounds(150, 10, 210, 40);
 
         back.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         back.setIcon(new javax.swing.ImageIcon(getClass().getResource("/image/icons8-left-arrow-30.png"))); // NOI18N
@@ -298,11 +293,11 @@ public class product_tbl extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 918, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 929, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 471, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 467, Short.MAX_VALUE)
         );
 
         pack();

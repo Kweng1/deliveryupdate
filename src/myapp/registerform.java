@@ -44,47 +44,41 @@ public class registerform extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        jPanel1.setBackground(new java.awt.Color(153, 153, 153));
+        jPanel1.setBackground(new java.awt.Color(1, 121, 111));
         jPanel1.setLayout(null);
-
-        jTextField1.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.add(jTextField1);
         jTextField1.setBounds(300, 140, 280, 40);
 
         jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel2.setText("Username:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(200, 150, 100, 20);
+        jLabel2.setBounds(130, 150, 100, 20);
 
-        jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.setBackground(new java.awt.Color(0, 153, 153));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Century Gothic", 1, 36)); // NOI18N
+        jLabel1.setBackground(new java.awt.Color(0, 153, 153));
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 36)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("REGISTRATION FORM");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(256, 24, 380, 50));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-20, 0, 1000, 60));
 
         jPanel1.add(jPanel2);
-        jPanel2.setBounds(0, 0, 920, 100);
+        jPanel2.setBounds(0, 0, 940, 60);
 
         jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel3.setText("Email:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(200, 210, 100, 20);
-
-        jTextField2.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel3.setBounds(130, 210, 100, 20);
         jPanel1.add(jTextField2);
         jTextField2.setBounds(300, 200, 280, 40);
 
         jLabel4.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
         jLabel4.setText("Password:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(200, 270, 100, 20);
-
-        jTextField3.setBackground(new java.awt.Color(204, 204, 204));
+        jLabel4.setBounds(130, 280, 100, 20);
         jPanel1.add(jTextField3);
         jTextField3.setBounds(300, 260, 280, 40);
-
-        jTextField4.setBackground(new java.awt.Color(204, 204, 204));
         jPanel1.add(jTextField4);
         jTextField4.setBounds(300, 320, 280, 40);
 
@@ -93,7 +87,7 @@ public class registerform extends javax.swing.JFrame {
         jPanel1.add(jLabel5);
         jLabel5.setBounds(130, 330, 170, 20);
 
-        create.setBackground(new java.awt.Color(204, 204, 204));
+        create.setBackground(new java.awt.Color(102, 255, 204));
         create.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         create.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -116,7 +110,7 @@ public class registerform extends javax.swing.JFrame {
         jPanel1.add(create);
         create.setBounds(450, 390, 100, 40);
 
-        cancel.setBackground(new java.awt.Color(204, 204, 204));
+        cancel.setBackground(new java.awt.Color(102, 255, 204));
         cancel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         cancel.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -143,11 +137,11 @@ public class registerform extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 918, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 932, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 471, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 467, Short.MAX_VALUE)
         );
 
         pack();
