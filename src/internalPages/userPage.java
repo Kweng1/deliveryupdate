@@ -55,7 +55,7 @@ public class userPage extends javax.swing.JInternalFrame {
     
     public void reset(){
         
-        cid.setText("");
+        cprice.setText("");
         cname.setText("");
         cadd.setText("");
         corder.setText("");
@@ -87,7 +87,6 @@ public class userPage extends javax.swing.JInternalFrame {
         customer_tbl = new javax.swing.JTable();
         delete = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
-        close = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -102,8 +101,15 @@ public class userPage extends javax.swing.JInternalFrame {
         cadd = new javax.swing.JTextField();
         refresh = new javax.swing.JPanel();
         REFRESH = new javax.swing.JLabel();
-        cid = new javax.swing.JTextField();
+        cprice = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
+        cid = new javax.swing.JTextField();
+        csize = new javax.swing.JTextField();
+        cquant = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel14 = new javax.swing.JLabel();
+        jLabel15 = new javax.swing.JLabel();
+        jButton1 = new javax.swing.JButton();
 
         setPreferredSize(new java.awt.Dimension(736, 436));
 
@@ -131,9 +137,9 @@ public class userPage extends javax.swing.JInternalFrame {
         jLabel11.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel11.setText("ADD");
-        insertData.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 80, 20));
+        insertData.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
-        jPanel1.add(insertData, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 120, 80, 40));
+        jPanel1.add(insertData, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 80, 80, 30));
 
         update.setBackground(new java.awt.Color(0, 255, 204));
         update.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -152,9 +158,9 @@ public class userPage extends javax.swing.JInternalFrame {
         jLabel4.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel4.setText("UPDATE");
-        update.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 80, 20));
+        update.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
-        jPanel1.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 120, 80, 40));
+        jPanel1.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 80, 80, 30));
 
         search.setBackground(new java.awt.Color(0, 255, 204));
         search.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -174,9 +180,9 @@ public class userPage extends javax.swing.JInternalFrame {
         jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel5.setText("SEARCH");
-        search.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 80, 20));
+        search.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
-        jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 50, 80, 40));
+        jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 30, 80, 30));
 
         searchbar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         searchbar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -186,7 +192,7 @@ public class userPage extends javax.swing.JInternalFrame {
                 searchbarActionPerformed(evt);
             }
         });
-        jPanel1.add(searchbar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, 570, 40));
+        jPanel1.add(searchbar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 570, 30));
 
         customer_tbl.setBackground(new java.awt.Color(153, 153, 153));
         customer_tbl.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -196,7 +202,7 @@ public class userPage extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(customer_tbl);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 450, 170));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 450, 170));
 
         delete.setBackground(new java.awt.Color(0, 255, 204));
         delete.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -215,47 +221,37 @@ public class userPage extends javax.swing.JInternalFrame {
         jLabel7.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel7.setText("DELETE");
-        delete.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 80, 20));
+        delete.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
-        jPanel1.add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 170, 80, 40));
+        jPanel1.add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 130, 80, 30));
 
-        close.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
-        close.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        close.setText("X");
-        close.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                closeMouseClicked(evt);
-            }
-        });
-        jPanel1.add(close, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 0, 30, 30));
-
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel2.setText("Order:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 310, 60, -1));
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 50, -1));
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel6.setText("ID:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 70, 20));
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 40, 20));
 
-        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel8.setText("Address:");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 90, 20));
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 70, 20));
 
-        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel9.setText("Total Price:");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 370, 120, 20));
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel9.setText("Size:");
+        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, 50, 20));
 
-        corder.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        corder.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         corder.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(corder, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 310, 220, 30));
+        jPanel1.add(corder, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, 220, 20));
 
-        ctp.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        ctp.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         ctp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(ctp, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, 220, 30));
+        jPanel1.add(ctp, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 370, 220, 20));
 
-        cname.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cname.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cname.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(cname, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, 220, 30));
+        jPanel1.add(cname, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 220, 20));
 
         clear.setBackground(new java.awt.Color(0, 255, 204));
         clear.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -275,9 +271,9 @@ public class userPage extends javax.swing.JInternalFrame {
         jLabel10.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setText("CLEAR");
-        clear.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 80, 20));
+        clear.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
-        jPanel1.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 220, 80, 40));
+        jPanel1.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 180, 80, 30));
 
         print.setBackground(new java.awt.Color(0, 255, 204));
         print.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -296,13 +292,13 @@ public class userPage extends javax.swing.JInternalFrame {
         jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel3.setText("PRINT");
-        print.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 80, 20));
+        print.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
-        jPanel1.add(print, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 220, 80, 40));
+        jPanel1.add(print, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, 80, 30));
 
-        cadd.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        cadd.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cadd.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(cadd, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 370, 220, 30));
+        jPanel1.add(cadd, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, 220, 20));
 
         refresh.setBackground(new java.awt.Color(0, 255, 204));
         refresh.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -322,23 +318,56 @@ public class userPage extends javax.swing.JInternalFrame {
         REFRESH.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         REFRESH.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         REFRESH.setText("REFRESH");
-        refresh.add(REFRESH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 80, 20));
+        refresh.add(REFRESH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
-        jPanel1.add(refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 170, 80, 40));
+        jPanel1.add(refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 130, 80, 30));
 
-        cid.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        cid.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(cid, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 290, 220, 30));
+        cprice.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cprice.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(cprice, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 310, 220, 20));
 
-        jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel13.setText("Name: ");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 70, 20));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 50, 20));
+
+        cid.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cid.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(cid, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 220, 20));
+
+        csize.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        csize.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(csize, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, 220, 20));
+
+        cquant.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cquant.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(cquant, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, 220, 20));
+
+        jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel12.setText("Total Price:");
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 370, 100, 20));
+
+        jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel14.setText("Price:");
+        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 310, 80, 20));
+
+        jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel15.setText("Quantity:");
+        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 280, 80, 20));
+
+        jButton1.setBackground(new java.awt.Color(0, 255, 204));
+        jButton1.setText("CALCULATE");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 340, -1, 20));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 791, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -364,11 +393,6 @@ public class userPage extends javax.swing.JInternalFrame {
         search.setBackground(headcolor);
     }//GEN-LAST:event_searchMouseExited
 
-    private void closeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_closeMouseClicked
-
-        this.dispose();
-    }//GEN-LAST:event_closeMouseClicked
-
     private void clearMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearMouseExited
           clear.setBackground(headcolor);
     }//GEN-LAST:event_clearMouseExited
@@ -381,7 +405,10 @@ public class userPage extends javax.swing.JInternalFrame {
          ctp.setText(null);
          cname.setText(null);
          corder.setText(null);
+         cprice.setText(null);
          cid.setText(null);
+         csize.setText(null);
+         cquant.setText(null);
          cadd.setText(null);
             
     }//GEN-LAST:event_clearMouseClicked
@@ -424,8 +451,8 @@ public class userPage extends javax.swing.JInternalFrame {
        dbconnector dbc = new dbconnector();
         int num = dbc.updateData("UPDATE customer_tbl "
                 + "SET c_name = '"+cname.getText()+"', c_add='"+cadd.getText()+"', "
-                        + "c_order ='"+corder.getText()+"', c_tp='"+ctp.getText()+"'  "
-                                + "WHERE c_id = '"+cid.getText()+"'");
+                        + "c_order ='"+corder.getText()+"',c_size='"+csize.getText()+"',c_quant='"+cquant.getText()+"',c_price='"+cprice.getText()+"', c_tp='"+ctp.getText()+"'  "
+                                + "WHERE c_id = '"+cprice.getText()+"'");
        
         if(num == 0){
            
@@ -446,8 +473,8 @@ public class userPage extends javax.swing.JInternalFrame {
 
     private void insertDataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_insertDataMouseClicked
         dbconnector dbc = new dbconnector();
-        dbc.insertData("INSERT INTO customer_tbl ( c_name, c_add, c_order, c_tp) "
-                + "VALUES ( '"+cname.getText()+"','"+cadd.getText()+"','"+corder.getText()+"','"+ctp.getText()+"')");
+        dbc.insertData("INSERT INTO customer_tbl ( c_name, c_add, c_order,c_size,c_quant,c_price, c_tp) "
+                + "VALUES ( '"+cname.getText()+"','"+cadd.getText()+"','"+corder.getText()+"','"+csize.getText()+"','"+cquant.getText()+"','"+cprice.getText()+"','"+ctp.getText()+"')");
         displayData();
         reset();
     }//GEN-LAST:event_insertDataMouseClicked
@@ -462,14 +489,18 @@ public class userPage extends javax.swing.JInternalFrame {
           cname.setText(""+model.getValueAt(rowIndex, 1));
           cadd.setText(""+model.getValueAt(rowIndex, 2));
           corder.setText(""+model.getValueAt(rowIndex, 3));
-          ctp.setText(""+model.getValueAt(rowIndex, 4));
+          csize.setText(""+model.getValueAt(rowIndex, 4));
+          cquant.setText(""+model.getValueAt(rowIndex, 5));
+          cprice.setText(""+model.getValueAt(rowIndex, 6));
+          ctp.setText(""+model.getValueAt(rowIndex, 7));
+          
           
       }
        
     }//GEN-LAST:event_customer_tblMouseClicked
 
     private void printMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_printMouseClicked
-        MessageFormat header = new MessageFormat("Customer Orde");
+        MessageFormat header = new MessageFormat("Customer Order");
        MessageFormat footer = new MessageFormat("Page {0, number,integer}");
        
        try
@@ -510,23 +541,36 @@ public class userPage extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_refreshMouseExited
 
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+       double a = Double.parseDouble(cquant.getText());
+       int b = Integer.parseInt(cprice.getText());
+       double totalp = a * b;
+       ctp.setText (""+totalp);
+    }//GEN-LAST:event_jButton1ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel REFRESH;
     private javax.swing.JTextField cadd;
     private javax.swing.JTextField cid;
     private javax.swing.JPanel clear;
-    private javax.swing.JLabel close;
     private javax.swing.JTextField cname;
     private javax.swing.JTextField corder;
+    private javax.swing.JTextField cprice;
+    private javax.swing.JTextField cquant;
+    private javax.swing.JTextField csize;
     private javax.swing.JTextField ctp;
     private javax.swing.JTable customer_tbl;
     private javax.swing.JPanel delete;
     private javax.swing.JPanel insertData;
+    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
