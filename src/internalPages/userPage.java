@@ -60,6 +60,8 @@ public class userPage extends javax.swing.JInternalFrame {
         cadd.setText("");
         corder.setText("");
         ctp.setText("");
+        csize.setText("");
+        cquant.setText("");
         
     }
     
@@ -185,6 +187,7 @@ public class userPage extends javax.swing.JInternalFrame {
         jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 30, 80, 30));
 
         searchbar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        searchbar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         searchbar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         searchbar.setOpaque(false);
         searchbar.addActionListener(new java.awt.event.ActionListener() {
@@ -194,7 +197,7 @@ public class userPage extends javax.swing.JInternalFrame {
         });
         jPanel1.add(searchbar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 570, 30));
 
-        customer_tbl.setBackground(new java.awt.Color(153, 153, 153));
+        customer_tbl.setBackground(new java.awt.Color(0, 204, 204));
         customer_tbl.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 customer_tblMouseClicked(evt);
@@ -336,6 +339,11 @@ public class userPage extends javax.swing.JInternalFrame {
 
         csize.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         csize.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        csize.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                csizeActionPerformed(evt);
+            }
+        });
         jPanel1.add(csize, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, 220, 20));
 
         cquant.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
@@ -355,6 +363,7 @@ public class userPage extends javax.swing.JInternalFrame {
         jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 280, 80, 20));
 
         jButton1.setBackground(new java.awt.Color(0, 255, 204));
+        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 11)); // NOI18N
         jButton1.setText("CALCULATE");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -480,7 +489,7 @@ public class userPage extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_insertDataMouseClicked
 
     private void customer_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_customer_tblMouseClicked
-      int rowIndex = customer_tbl.getSelectedRow();
+       int rowIndex = customer_tbl.getSelectedRow();
       if(rowIndex < 0){
           
       }else{
@@ -547,6 +556,10 @@ public class userPage extends javax.swing.JInternalFrame {
        double totalp = a * b;
        ctp.setText (""+totalp);
     }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void csizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_csizeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_csizeActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

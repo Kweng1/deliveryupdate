@@ -100,7 +100,7 @@ public class dashBoardPage extends javax.swing.JInternalFrame {
 
         jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel6.setText("PRODUCT");
+        jLabel6.setText("PRODUCT LIST");
         manageuser.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 100, 140, 30));
 
         jPanel2.add(manageuser, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 60, 140, 130));

@@ -86,6 +86,7 @@ public class product_tbl extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         back = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -101,10 +102,9 @@ public class product_tbl extends javax.swing.JFrame {
         jScrollPane1.setViewportView(product_tbl);
 
         jPanel1.add(jScrollPane1);
-        jScrollPane1.setBounds(482, 20, 430, 430);
+        jScrollPane1.setBounds(432, 20, 480, 430);
 
         add.setBackground(new java.awt.Color(0, 255, 204));
-        add.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         add.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 addMouseClicked(evt);
@@ -124,10 +124,9 @@ public class product_tbl extends javax.swing.JFrame {
         add.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 80, 20));
 
         jPanel1.add(add);
-        add.setBounds(20, 110, 80, 40);
+        add.setBounds(80, 330, 80, 40);
 
         update.setBackground(new java.awt.Color(0, 255, 204));
-        update.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         update.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 updateMouseClicked(evt);
@@ -147,10 +146,9 @@ public class product_tbl extends javax.swing.JFrame {
         update.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 80, 20));
 
         jPanel1.add(update);
-        update.setBounds(110, 110, 80, 40);
+        update.setBounds(80, 390, 80, 40);
 
         delete.setBackground(new java.awt.Color(0, 255, 204));
-        delete.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         delete.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 deleteMouseClicked(evt);
@@ -170,10 +168,9 @@ public class product_tbl extends javax.swing.JFrame {
         delete.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 80, 20));
 
         jPanel1.add(delete);
-        delete.setBounds(200, 110, 80, 40);
+        delete.setBounds(310, 330, 80, 40);
 
         clear.setBackground(new java.awt.Color(0, 255, 204));
-        clear.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         clear.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 clearMouseClicked(evt);
@@ -193,10 +190,9 @@ public class product_tbl extends javax.swing.JFrame {
         clear.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 80, 20));
 
         jPanel1.add(clear);
-        clear.setBounds(290, 110, 80, 40);
+        clear.setBounds(200, 390, 80, 40);
 
         refresh.setBackground(new java.awt.Color(0, 255, 204));
-        refresh.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         refresh.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 refreshMouseClicked(evt);
@@ -216,43 +212,43 @@ public class product_tbl extends javax.swing.JFrame {
         refresh.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 80, 20));
 
         jPanel1.add(refresh);
-        refresh.setBounds(380, 110, 80, 40);
+        refresh.setBounds(200, 330, 80, 40);
 
         pname.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jPanel1.add(pname);
-        pname.setBounds(160, 270, 250, 30);
+        pname.setBounds(150, 130, 250, 30);
 
         ps.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jPanel1.add(ps);
-        ps.setBounds(160, 320, 250, 30);
+        ps.setBounds(150, 180, 250, 30);
 
         pm.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jPanel1.add(pm);
-        pm.setBounds(160, 370, 250, 30);
+        pm.setBounds(150, 230, 250, 30);
 
         pl.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jPanel1.add(pl);
-        pl.setBounds(160, 420, 250, 30);
+        pl.setBounds(150, 280, 250, 30);
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel2.setText("PRODUCT NAME:");
         jPanel1.add(jLabel2);
-        jLabel2.setBounds(30, 270, 130, 30);
+        jLabel2.setBounds(20, 130, 130, 30);
 
         jLabel3.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel3.setText("P_ID:");
         jPanel1.add(jLabel3);
-        jLabel3.setBounds(30, 220, 60, 30);
+        jLabel3.setBounds(20, 80, 60, 30);
 
         jLabel4.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel4.setText("MEDIUM:");
         jPanel1.add(jLabel4);
-        jLabel4.setBounds(30, 370, 70, 30);
+        jLabel4.setBounds(20, 220, 70, 30);
 
         jLabel5.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel5.setText("LARGE:");
         jPanel1.add(jLabel5);
-        jLabel5.setBounds(30, 420, 60, 30);
+        jLabel5.setBounds(20, 270, 60, 30);
 
         pid.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         pid.addActionListener(new java.awt.event.ActionListener() {
@@ -261,12 +257,12 @@ public class product_tbl extends javax.swing.JFrame {
             }
         });
         jPanel1.add(pid);
-        pid.setBounds(160, 220, 250, 30);
+        pid.setBounds(150, 80, 250, 30);
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel6.setText("SMALL:");
         jPanel1.add(jLabel6);
-        jLabel6.setBounds(30, 320, 60, 30);
+        jLabel6.setBounds(20, 170, 60, 30);
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
         jLabel1.setText("PRODUCT LIST");
@@ -288,6 +284,8 @@ public class product_tbl extends javax.swing.JFrame {
         });
         jPanel1.add(back);
         back.setBounds(10, 10, 40, 20);
+        jPanel1.add(jSeparator1);
+        jSeparator1.setBounds(20, 50, 400, 20);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -487,6 +485,7 @@ public class product_tbl extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField pid;
     private javax.swing.JTextField pl;
     private javax.swing.JTextField pm;
