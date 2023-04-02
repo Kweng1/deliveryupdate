@@ -39,6 +39,10 @@ public class dashBoard extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
+        userpane1 = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel11 = new javax.swing.JLabel();
         header = new javax.swing.JPanel();
         minimize = new javax.swing.JLabel();
         close = new javax.swing.JLabel();
@@ -117,6 +121,38 @@ public class dashBoard extends javax.swing.JFrame {
         jLabel6.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel6.setText("WELCOME");
         navbar.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 180, -1));
+
+        userpane1.setBackground(new java.awt.Color(0, 204, 204));
+        userpane1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                userpane1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                userpane1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                userpane1MouseExited(evt);
+            }
+        });
+        userpane1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel10.setBackground(new java.awt.Color(0, 204, 204));
+        jLabel10.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("CUSTOMER REPORT");
+        userpane1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 180, 40));
+
+        navbar.add(userpane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 260, 180, 40));
+
+        jPanel2.setBackground(new java.awt.Color(0, 204, 204));
+        jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel11.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("ORDER INFORMATION");
+        jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 11, 180, -1));
+
+        navbar.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 310, 180, 40));
 
         jPanel1.add(navbar);
         navbar.setBounds(0, 0, 180, 470);
@@ -221,6 +257,18 @@ public class dashBoard extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_closeMouseClicked
 
+    private void userpane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userpane1MouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_userpane1MouseClicked
+
+    private void userpane1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userpane1MouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_userpane1MouseEntered
+
+    private void userpane1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_userpane1MouseExited
+        // TODO add your handling code here:
+    }//GEN-LAST:event_userpane1MouseExited
+
     /**
      * @param args the command line arguments
      */
@@ -262,6 +310,8 @@ public class dashBoard extends javax.swing.JFrame {
     public static javax.swing.JLabel firstname;
     private javax.swing.JPanel header;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -271,9 +321,11 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JPanel jPanel2;
     private javax.swing.JDesktopPane maindesktop;
     private javax.swing.JLabel minimize;
     private javax.swing.JPanel navbar;
     private javax.swing.JPanel userpane;
+    private javax.swing.JPanel userpane1;
     // End of variables declaration//GEN-END:variables
 }

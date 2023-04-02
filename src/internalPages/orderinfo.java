@@ -5,6 +5,9 @@
  */
 package internalPages;
 
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableModel;
+
 /**
  *
  * @author SCC-PC
@@ -27,24 +30,449 @@ public class orderinfo extends javax.swing.JInternalFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jLabel1 = new javax.swing.JLabel();
+        searchbar = new javax.swing.JTextField();
+        search = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        customer_tbl = new javax.swing.JTable();
+        insertData1 = new javax.swing.JPanel();
+        jLabel12 = new javax.swing.JLabel();
+        update = new javax.swing.JPanel();
+        jLabel4 = new javax.swing.JLabel();
+        delete = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
+        clear = new javax.swing.JPanel();
+        jLabel10 = new javax.swing.JLabel();
+        refresh = new javax.swing.JPanel();
+        REFRESH = new javax.swing.JLabel();
+        print = new javax.swing.JPanel();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel6 = new javax.swing.JLabel();
+        cid = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
+        cname = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        cadd = new javax.swing.JTextField();
+        jLabel9 = new javax.swing.JLabel();
+        pid = new javax.swing.JTextField();
+        jLabel2 = new javax.swing.JLabel();
+        corder = new javax.swing.JTextField();
+        jLabel11 = new javax.swing.JLabel();
+        csize = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        cquant = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        cprice = new javax.swing.JTextField();
+        jLabel16 = new javax.swing.JLabel();
+        ctp = new javax.swing.JTextField();
+
         setBackground(new java.awt.Color(1, 121, 111));
         setPreferredSize(new java.awt.Dimension(736, 436));
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 720, Short.MAX_VALUE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 406, Short.MAX_VALUE)
-        );
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
+        jLabel1.setText("ORDER INFORMATION");
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 240, 20));
+
+        searchbar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        searchbar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        searchbar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        searchbar.setOpaque(false);
+        searchbar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchbarActionPerformed(evt);
+            }
+        });
+        getContentPane().add(searchbar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 40, 580, 30));
+
+        search.setBackground(new java.awt.Color(0, 255, 204));
+        search.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        search.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                searchMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                searchMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                searchMouseExited(evt);
+            }
+        });
+        search.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("SEARCH");
+        search.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
+
+        getContentPane().add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(620, 40, 80, 30));
+
+        customer_tbl.setBackground(new java.awt.Color(0, 204, 204));
+        customer_tbl.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                customer_tblMouseClicked(evt);
+            }
+        });
+        jScrollPane1.setViewportView(customer_tbl);
+
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 80, 380, 210));
+
+        insertData1.setBackground(new java.awt.Color(0, 255, 204));
+        insertData1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                insertData1MouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                insertData1MouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                insertData1MouseExited(evt);
+            }
+        });
+        insertData1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel12.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("ADD");
+        insertData1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
+
+        getContentPane().add(insertData1, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 310, 80, 30));
+
+        update.setBackground(new java.awt.Color(0, 255, 204));
+        update.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                updateMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                updateMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                updateMouseExited(evt);
+            }
+        });
+        update.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel4.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel4.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel4.setText("UPDATE");
+        update.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
+
+        getContentPane().add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 310, 80, 30));
+
+        delete.setBackground(new java.awt.Color(0, 255, 204));
+        delete.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                deleteMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                deleteMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                deleteMouseExited(evt);
+            }
+        });
+        delete.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel7.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel7.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel7.setText("DELETE");
+        delete.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
+
+        getContentPane().add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 360, 80, 30));
+
+        clear.setBackground(new java.awt.Color(0, 255, 204));
+        clear.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                clearMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                clearMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                clearMouseExited(evt);
+            }
+        });
+        clear.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel10.setBackground(new java.awt.Color(153, 153, 153));
+        jLabel10.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel10.setText("CLEAR");
+        clear.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
+
+        getContentPane().add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(350, 360, 80, 30));
+
+        refresh.setBackground(new java.awt.Color(0, 255, 204));
+        refresh.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                refreshMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                refreshMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                refreshMouseExited(evt);
+            }
+        });
+        refresh.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        REFRESH.setBackground(new java.awt.Color(153, 153, 153));
+        REFRESH.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        REFRESH.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        REFRESH.setText("REFRESH");
+        refresh.add(REFRESH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
+
+        getContentPane().add(refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 310, 80, 30));
+
+        print.setBackground(new java.awt.Color(0, 255, 204));
+        print.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                printMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                printMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                printMouseExited(evt);
+            }
+        });
+        print.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel3.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel3.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel3.setText("PRINT");
+        print.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
+
+        getContentPane().add(print, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 360, 80, 30));
+
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel6.setText("ID:");
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 40, 20));
+
+        cid.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cid.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(cid, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 80, 220, 20));
+
+        jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel13.setText("Name: ");
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 50, 20));
+
+        cname.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cname.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(cname, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 110, 220, 20));
+
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel8.setText("Address:");
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 70, 20));
+
+        cadd.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cadd.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(cadd, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 140, 220, 20));
+
+        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel9.setText("P_ID:");
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
+
+        pid.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        pid.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        pid.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                pidActionPerformed(evt);
+            }
+        });
+        getContentPane().add(pid, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 170, 220, 20));
+
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel2.setText("Order:");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 50, -1));
+
+        corder.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        corder.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(corder, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 200, 220, 20));
+
+        jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel11.setText("Size:");
+        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, 50, 20));
+
+        csize.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        csize.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        csize.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                csizeActionPerformed(evt);
+            }
+        });
+        getContentPane().add(csize, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 220, 20));
+
+        jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel15.setText("Quantity:");
+        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 80, 20));
+
+        cquant.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cquant.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(cquant, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 260, 220, 20));
+
+        jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel14.setText("Price:");
+        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 290, 80, 20));
+
+        cprice.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cprice.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(cprice, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 290, 220, 20));
+
+        jLabel16.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        jLabel16.setText("Total Price:");
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 320, 80, 20));
+
+        ctp.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ctp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        getContentPane().add(ctp, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 320, 200, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void searchbarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchbarActionPerformed
+        searchbar.setText(null);
+    }//GEN-LAST:event_searchbarActionPerformed
+
+    private void searchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchMouseClicked
+      
+
+    }//GEN-LAST:event_searchMouseClicked
+
+    private void searchMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchMouseEntered
+        
+    }//GEN-LAST:event_searchMouseEntered
+
+    private void searchMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchMouseExited
+       
+    }//GEN-LAST:event_searchMouseExited
+
+    private void customer_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_customer_tblMouseClicked
+      
+
+    }//GEN-LAST:event_customer_tblMouseClicked
+
+    private void insertData1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_insertData1MouseClicked
+       
+    }//GEN-LAST:event_insertData1MouseClicked
+
+    private void insertData1MouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_insertData1MouseEntered
+    
+    }//GEN-LAST:event_insertData1MouseEntered
+
+    private void insertData1MouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_insertData1MouseExited
+       
+    }//GEN-LAST:event_insertData1MouseExited
+
+    private void updateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateMouseClicked
+     
+    }//GEN-LAST:event_updateMouseClicked
+
+    private void updateMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateMouseEntered
+ 
+    }//GEN-LAST:event_updateMouseEntered
+
+    private void updateMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateMouseExited
+
+    }//GEN-LAST:event_updateMouseExited
+
+    private void deleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMouseClicked
+       
+   
+    }//GEN-LAST:event_deleteMouseClicked
+
+    private void deleteMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMouseEntered
+
+    }//GEN-LAST:event_deleteMouseEntered
+
+    private void deleteMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMouseExited
+      
+    }//GEN-LAST:event_deleteMouseExited
+
+    private void clearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearMouseClicked
+    
+
+    }//GEN-LAST:event_clearMouseClicked
+
+    private void clearMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearMouseEntered
+       
+    }//GEN-LAST:event_clearMouseEntered
+
+    private void clearMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearMouseExited
+
+    }//GEN-LAST:event_clearMouseExited
+
+    private void refreshMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_refreshMouseClicked
+      
+
+    }//GEN-LAST:event_refreshMouseClicked
+
+    private void refreshMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_refreshMouseEntered
+      
+    }//GEN-LAST:event_refreshMouseEntered
+
+    private void refreshMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_refreshMouseExited
+      
+    }//GEN-LAST:event_refreshMouseExited
+
+    private void printMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_printMouseClicked
+    
+    }//GEN-LAST:event_printMouseClicked
+
+    private void printMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_printMouseEntered
+        
+    }//GEN-LAST:event_printMouseEntered
+
+    private void printMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_printMouseExited
+   
+    }//GEN-LAST:event_printMouseExited
+
+    private void pidActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pidActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_pidActionPerformed
+
+    private void csizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_csizeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_csizeActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel REFRESH;
+    private javax.swing.JTextField cadd;
+    private javax.swing.JTextField cid;
+    private javax.swing.JPanel clear;
+    private javax.swing.JTextField cname;
+    private javax.swing.JTextField corder;
+    private javax.swing.JTextField cprice;
+    private javax.swing.JTextField cquant;
+    private javax.swing.JTextField csize;
+    private javax.swing.JTextField ctp;
+    private javax.swing.JTable customer_tbl;
+    private javax.swing.JPanel delete;
+    private javax.swing.JPanel insertData1;
+    private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField pid;
+    private javax.swing.JPanel print;
+    private javax.swing.JPanel refresh;
+    private javax.swing.JPanel search;
+    private javax.swing.JTextField searchbar;
+    private javax.swing.JPanel update;
     // End of variables declaration//GEN-END:variables
 }
