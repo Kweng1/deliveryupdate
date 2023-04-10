@@ -28,21 +28,24 @@ public class dbconnector {
         return rs;
     }
          public void insertData(String sql){
+             int result;
             try{
             PreparedStatement pstmt = connection.prepareStatement(sql);
            
             pstmt.executeUpdate();
             System.out.println("Inserted Successfully!");
             pstmt.close();
+            result =1;
             }catch(SQLException e){
                 System.out.println("Connection Error: "+e);
+                result = 0;
             }
     }
    
       //for DELETE or REMOVE data, must be inside the connector class
-    public void deleteData(int id) {
+    public void deleteData(int id, String table, String table_id) {
     try {
-        PreparedStatement stmt = connection.prepareStatement("DELETE FROM customer_tbl WHERE c_id = ?");
+        PreparedStatement stmt = connection.prepareStatement("DELETE FROM "+table+" WHERE "+table_id+" = ?");
         stmt.setInt(1, id);
         int rowsDeleted = stmt.executeUpdate();
         if (rowsDeleted > 0) {
@@ -79,22 +82,8 @@ public class dbconnector {
         return num;
     }
     
-    public void deletedata(int id) {
-    try {
-        PreparedStatement stmt = connection.prepareStatement("DELETE FROM product_tbl WHERE p_id = ?");
-        stmt.setInt(1, id);
-        int rowsDeleted = stmt.executeUpdate();
-        if (rowsDeleted > 0) {
-            System.out.println(rowsDeleted + " rows were deleted.");
-        } else {
-            System.out.println("No rows were deleted.");
-        }
-        stmt.close();
-        connection.close();
-    } catch (SQLException e) {
-        System.out.println("Error deleting data: " + e.getMessage());
-    }
-}
+    
+      
    
      
 }

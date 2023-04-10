@@ -24,12 +24,12 @@ import net.proteanit.sql.DbUtils;
  *
  * @author admin
  */
-public class userPage extends javax.swing.JInternalFrame {
+public class attendanceForm extends javax.swing.JInternalFrame {
 
     /**
      * Creates new form userPage
      */
-    public userPage() {
+    public attendanceForm() {
         initComponents();
         displayData();
         
@@ -44,8 +44,8 @@ public class userPage extends javax.swing.JInternalFrame {
         try{
        
             dbconnector dbc = new dbconnector();
-            ResultSet rs = dbc.getData("SELECT * FROM customer_tbl");
-            customer_tbl.setModel(DbUtils.resultSetToTableModel(rs));
+            ResultSet rs = dbc.getData("SELECT * FROM attndance_form");
+            attendance_tbl.setModel(DbUtils.resultSetToTableModel(rs));
        
         }catch(SQLException ex){
             System.out.println("Error Message: "+ex);
@@ -55,13 +55,14 @@ public class userPage extends javax.swing.JInternalFrame {
     
     public void reset(){
         
-        cprice.setText("");
-        cname.setText("");
-        cadd.setText("");
-        corder.setText("");
-        ctp.setText("");
-        csize.setText("");
-        cquant.setText("");
+       
+        lname.setText("");
+        email.setText("");
+        time.setText("");
+        fname.setText("");
+        
+         
+        
         
     }
     
@@ -82,45 +83,33 @@ public class userPage extends javax.swing.JInternalFrame {
         jLabel11 = new javax.swing.JLabel();
         update = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
-        search = new javax.swing.JPanel();
-        jLabel5 = new javax.swing.JLabel();
-        searchbar = new javax.swing.JTextField();
         jScrollPane1 = new javax.swing.JScrollPane();
-        customer_tbl = new javax.swing.JTable();
+        attendance_tbl = new javax.swing.JTable();
         delete = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        corder = new javax.swing.JTextField();
-        ctp = new javax.swing.JTextField();
-        cname = new javax.swing.JTextField();
+        time = new javax.swing.JTextField();
+        lname = new javax.swing.JTextField();
         clear = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         print = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
-        cadd = new javax.swing.JTextField();
+        email = new javax.swing.JTextField();
         refresh = new javax.swing.JPanel();
         REFRESH = new javax.swing.JLabel();
-        cprice = new javax.swing.JTextField();
         jLabel13 = new javax.swing.JLabel();
-        cid = new javax.swing.JTextField();
-        csize = new javax.swing.JTextField();
-        cquant = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
+        fname = new javax.swing.JTextField();
 
         setPreferredSize(new java.awt.Dimension(736, 436));
 
         jPanel1.setBackground(new java.awt.Color(1, 121, 111));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
-        jLabel1.setText("COSTUMER REPORT");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 240, 20));
+        jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel1.setText("PRODUCT LIST");
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 240, 30));
 
         insertData.setBackground(new java.awt.Color(0, 255, 204));
         insertData.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -141,7 +130,7 @@ public class userPage extends javax.swing.JInternalFrame {
         jLabel11.setText("ADD");
         insertData.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
-        jPanel1.add(insertData, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 80, 80, 30));
+        jPanel1.add(insertData, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 80, 30));
 
         update.setBackground(new java.awt.Color(0, 255, 204));
         update.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -162,50 +151,17 @@ public class userPage extends javax.swing.JInternalFrame {
         jLabel4.setText("UPDATE");
         update.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
-        jPanel1.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 80, 80, 30));
+        jPanel1.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, 80, 30));
 
-        search.setBackground(new java.awt.Color(0, 255, 204));
-        search.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        search.addMouseListener(new java.awt.event.MouseAdapter() {
+        attendance_tbl.setBackground(new java.awt.Color(0, 204, 204));
+        attendance_tbl.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                searchMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                searchMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                searchMouseExited(evt);
+                attendance_tblMouseClicked(evt);
             }
         });
-        search.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        jScrollPane1.setViewportView(attendance_tbl);
 
-        jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel5.setText("SEARCH");
-        search.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
-
-        jPanel1.add(search, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 30, 80, 30));
-
-        searchbar.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        searchbar.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        searchbar.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        searchbar.setOpaque(false);
-        searchbar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                searchbarActionPerformed(evt);
-            }
-        });
-        jPanel1.add(searchbar, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 570, 30));
-
-        customer_tbl.setBackground(new java.awt.Color(0, 204, 204));
-        customer_tbl.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                customer_tblMouseClicked(evt);
-            }
-        });
-        jScrollPane1.setViewportView(customer_tbl);
-
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 70, 450, 170));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 70, 330, 320));
 
         delete.setBackground(new java.awt.Color(0, 255, 204));
         delete.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -226,35 +182,27 @@ public class userPage extends javax.swing.JInternalFrame {
         jLabel7.setText("DELETE");
         delete.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
-        jPanel1.add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 130, 80, 30));
+        jPanel1.add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 80, 30));
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel2.setText("Order:");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 340, 50, -1));
+        jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel2.setText("Time In:");
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 90, 30));
 
-        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel6.setText("ID:");
-        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 250, 40, 20));
+        jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel6.setText("Firstname:");
+        jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 90, 30));
 
-        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel8.setText("Address:");
-        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 70, 20));
+        jLabel8.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel8.setText("Email:");
+        jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 70, 30));
 
-        jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel9.setText("Size:");
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 250, 50, 20));
+        time.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        time.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(time, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 260, 220, 30));
 
-        corder.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        corder.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(corder, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 340, 220, 20));
-
-        ctp.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        ctp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(ctp, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 370, 220, 20));
-
-        cname.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        cname.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(cname, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 280, 220, 20));
+        lname.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        lname.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(lname, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 160, 220, 30));
 
         clear.setBackground(new java.awt.Color(0, 255, 204));
         clear.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -276,7 +224,7 @@ public class userPage extends javax.swing.JInternalFrame {
         jLabel10.setText("CLEAR");
         clear.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
-        jPanel1.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 180, 80, 30));
+        jPanel1.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 310, 80, 30));
 
         print.setBackground(new java.awt.Color(0, 255, 204));
         print.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -297,11 +245,11 @@ public class userPage extends javax.swing.JInternalFrame {
         jLabel3.setText("PRINT");
         print.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
-        jPanel1.add(print, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, 80, 30));
+        jPanel1.add(print, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, 80, 30));
 
-        cadd.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        cadd.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(cadd, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, 220, 20));
+        email.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        email.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(email, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 210, 220, 30));
 
         refresh.setBackground(new java.awt.Color(0, 255, 204));
         refresh.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -323,84 +271,29 @@ public class userPage extends javax.swing.JInternalFrame {
         REFRESH.setText("REFRESH");
         refresh.add(REFRESH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
-        jPanel1.add(refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 130, 80, 30));
+        jPanel1.add(refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, 80, 30));
 
-        cprice.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        cprice.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(cprice, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 310, 220, 20));
+        jLabel13.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel13.setText("Lastname:");
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 90, 30));
 
-        jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel13.setText("Name: ");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 280, 50, 20));
-
-        cid.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        cid.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(cid, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 250, 220, 20));
-
-        csize.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        csize.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        csize.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                csizeActionPerformed(evt);
-            }
-        });
-        jPanel1.add(csize, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 250, 220, 20));
-
-        cquant.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        cquant.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(cquant, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 280, 220, 20));
-
-        jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel12.setText("Total Price:");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 370, 100, 20));
-
-        jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel14.setText("Price:");
-        jPanel1.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 310, 80, 20));
-
-        jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel15.setText("Quantity:");
-        jPanel1.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(380, 280, 80, 20));
-
-        jButton1.setBackground(new java.awt.Color(0, 255, 204));
-        jButton1.setFont(new java.awt.Font("Times New Roman", 1, 11)); // NOI18N
-        jButton1.setText("CALCULATE");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 340, -1, 20));
+        fname.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        fname.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(fname, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 110, 220, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 720, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 418, Short.MAX_VALUE)
+            .addComponent(jPanel1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void searchMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchMouseClicked
-       DefaultTableModel model = (DefaultTableModel) customer_tbl.getModel();
-       TableRowSorter<DefaultTableModel> obj = new TableRowSorter<>(model);
-       customer_tbl.setRowSorter(obj);
-       obj.setRowFilter(RowFilter.regexFilter(searchbar.getText()));
-               
-    }//GEN-LAST:event_searchMouseClicked
-
-    private void searchMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchMouseEntered
-        search.setBackground(bodycolor);
-    }//GEN-LAST:event_searchMouseEntered
-
-    private void searchMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_searchMouseExited
-        search.setBackground(headcolor);
-    }//GEN-LAST:event_searchMouseExited
 
     private void clearMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearMouseExited
           clear.setBackground(headcolor);
@@ -411,14 +304,13 @@ public class userPage extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_clearMouseEntered
 
     private void clearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clearMouseClicked
-         ctp.setText(null);
-         cname.setText(null);
-         corder.setText(null);
-         cprice.setText(null);
-         cid.setText(null);
-         csize.setText(null);
-         cquant.setText(null);
-         cadd.setText(null);
+        
+         lname.setText(null);
+         time.setText(null);        
+         fname.setText(null);
+         email.setText(null);
+         
+         
             
     }//GEN-LAST:event_clearMouseClicked
 
@@ -431,17 +323,18 @@ public class userPage extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_deleteMouseEntered
 
     private void deleteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteMouseClicked
-       int rowIndex = customer_tbl.getSelectedRow();
+       int rowIndex = attendance_tbl.getSelectedRow();
        if(rowIndex < 0){
            JOptionPane.showMessageDialog(null, "Please select a data first");
        }else{
-            TableModel model = customer_tbl.getModel();
+            TableModel model = attendance_tbl.getModel();
             Object value = model.getValueAt(rowIndex, 0);
             String id = value.toString();
              int a=JOptionPane.showConfirmDialog(null,"Are you sure?");  
                     if(a==JOptionPane.YES_OPTION){  
                             dbconnector dbc = new dbconnector();
-                            dbc.deleteData(Integer.parseInt(id));
+                            int cid = Integer.parseInt(id);
+                            dbc.deleteData(cid,"attendance_form","af_name");
                             displayData();
                             reset();
                     }    
@@ -457,11 +350,10 @@ public class userPage extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_updateMouseEntered
 
     private void updateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_updateMouseClicked
-       dbconnector dbc = new dbconnector();
-        int num = dbc.updateData("UPDATE customer_tbl "
-                + "SET c_name = '"+cname.getText()+"', c_add='"+cadd.getText()+"', "
-                        + "c_order ='"+corder.getText()+"',c_size='"+csize.getText()+"',c_quant='"+cquant.getText()+"',c_price='"+cprice.getText()+"', c_tp='"+ctp.getText()+"'  "
-                                + "WHERE c_id = '"+cprice.getText()+"'");
+        dbconnector dbc = new dbconnector();
+        int num = dbc.updateData("UPDATE attendance_form "
+                + "SET af_name = '"+fname.getText()+"', al_name='"+lname.getText()+"', " + "a_email ='"+email.getText()+"', a_time='"+time.getText()+"'  "
+                                + "WHERE af_name = '"+fname.getText()+"'");
        
         if(num == 0){
            
@@ -481,40 +373,40 @@ public class userPage extends javax.swing.JInternalFrame {
     }//GEN-LAST:event_insertDataMouseEntered
 
     private void insertDataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_insertDataMouseClicked
-        dbconnector dbc = new dbconnector();
-        dbc.insertData("INSERT INTO customer_tbl ( c_name, c_add, c_order,c_size,c_quant,c_price, c_tp) "
-                + "VALUES ( '"+cname.getText()+"','"+cadd.getText()+"','"+corder.getText()+"','"+csize.getText()+"','"+cquant.getText()+"','"+cprice.getText()+"','"+ctp.getText()+"')");
+         dbconnector dbc = new dbconnector();
+        dbc.insertData("INSERT INTO attendance_form ( af_name, al_name, a_email, a_time) "
+                
+            + "VALUES ( '"+lname.getText()+"','"+email.getText()+"','"+time.getText()+"')");
         displayData();
         reset();
     }//GEN-LAST:event_insertDataMouseClicked
 
-    private void customer_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_customer_tblMouseClicked
-       int rowIndex = customer_tbl.getSelectedRow();
+    private void attendance_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_attendance_tblMouseClicked
+       int rowIndex = attendance_tbl.getSelectedRow();
       if(rowIndex < 0){
           
       }else{
-          TableModel model = customer_tbl.getModel();
-          cid.setText(""+model.getValueAt(rowIndex, 0));
-          cname.setText(""+model.getValueAt(rowIndex, 1));
-          cadd.setText(""+model.getValueAt(rowIndex, 2));
-          corder.setText(""+model.getValueAt(rowIndex, 3));
-          csize.setText(""+model.getValueAt(rowIndex, 4));
-          cquant.setText(""+model.getValueAt(rowIndex, 5));
-          cprice.setText(""+model.getValueAt(rowIndex, 6));
-          ctp.setText(""+model.getValueAt(rowIndex, 7));
+          TableModel model = attendance_tbl.getModel();
+          fname.setText(""+model.getValueAt(rowIndex, 0));
+          lname.setText(""+model.getValueAt(rowIndex, 1));
+          email.setText(""+model.getValueAt(rowIndex, 2));
+          time.setText(""+model.getValueAt(rowIndex, 3));
+         
+          
+         
           
           
       }
        
-    }//GEN-LAST:event_customer_tblMouseClicked
+    }//GEN-LAST:event_attendance_tblMouseClicked
 
     private void printMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_printMouseClicked
-        MessageFormat header = new MessageFormat("Customer Order");
+        MessageFormat header = new MessageFormat("attendance Form");
        MessageFormat footer = new MessageFormat("Page {0, number,integer}");
        
        try
        {
-           customer_tbl.print(JTable.PrintMode.NORMAL,header,footer);
+           attendance_tbl.print(JTable.PrintMode.NORMAL,header,footer);
        }
        
        catch(java.awt.print.PrinterException e)
@@ -531,10 +423,6 @@ public class userPage extends javax.swing.JInternalFrame {
         print.setBackground(headcolor);
     }//GEN-LAST:event_printMouseExited
 
-    private void searchbarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchbarActionPerformed
-       searchbar.setText(null);
-    }//GEN-LAST:event_searchbarActionPerformed
-
     private void refreshMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_refreshMouseClicked
           displayData();
     
@@ -550,54 +438,31 @@ public class userPage extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_refreshMouseExited
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-       double a = Double.parseDouble(cquant.getText());
-       int b = Integer.parseInt(cprice.getText());
-       double totalp = a * b;
-       ctp.setText (""+totalp);
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void csizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_csizeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_csizeActionPerformed
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel REFRESH;
-    private javax.swing.JTextField cadd;
-    private javax.swing.JTextField cid;
+    private javax.swing.JTable attendance_tbl;
     private javax.swing.JPanel clear;
-    private javax.swing.JTextField cname;
-    private javax.swing.JTextField corder;
-    private javax.swing.JTextField cprice;
-    private javax.swing.JTextField cquant;
-    private javax.swing.JTextField csize;
-    private javax.swing.JTextField ctp;
-    private javax.swing.JTable customer_tbl;
     private javax.swing.JPanel delete;
+    private javax.swing.JTextField email;
+    private javax.swing.JTextField fname;
     private javax.swing.JPanel insertData;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextField lname;
     private javax.swing.JPanel print;
     private javax.swing.JPanel refresh;
-    private javax.swing.JPanel search;
-    private javax.swing.JTextField searchbar;
+    private javax.swing.JTextField time;
     private javax.swing.JPanel update;
     // End of variables declaration//GEN-END:variables
 }
