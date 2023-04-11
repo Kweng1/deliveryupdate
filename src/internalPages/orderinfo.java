@@ -10,13 +10,16 @@ import java.awt.Color;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.MessageFormat;
+import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.RowFilter;
+import javax.swing.SwingUtilities;
 import javax.swing.plaf.basic.BasicInternalFrameUI;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableModel;
 import javax.swing.table.TableRowSorter;
+import myapp.loginForm;
 import net.proteanit.sql.DbUtils;
 
 /**
@@ -105,6 +108,8 @@ public class orderinfo extends javax.swing.JInternalFrame {
         jLabel6 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         order_table = new javax.swing.JTable();
+        logout = new javax.swing.JPanel();
+        jLabel8 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(736, 436));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -168,7 +173,7 @@ public class orderinfo extends javax.swing.JInternalFrame {
         jLabel12.setText("ADD");
         insertData1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
-        jPanel1.add(insertData1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 340, -1, 30));
+        jPanel1.add(insertData1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 340, -1, 30));
 
         update.setBackground(new java.awt.Color(0, 255, 204));
         update.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -189,7 +194,7 @@ public class orderinfo extends javax.swing.JInternalFrame {
         jLabel4.setText("UPDATE");
         update.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
-        jPanel1.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 340, 80, 30));
+        jPanel1.add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 340, 80, 30));
 
         delete.setBackground(new java.awt.Color(0, 255, 204));
         delete.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -210,7 +215,7 @@ public class orderinfo extends javax.swing.JInternalFrame {
         jLabel7.setText("DELETE");
         delete.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
-        jPanel1.add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 380, -1, -1));
+        jPanel1.add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(420, 380, -1, -1));
 
         clear.setBackground(new java.awt.Color(0, 255, 204));
         clear.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -232,7 +237,7 @@ public class orderinfo extends javax.swing.JInternalFrame {
         jLabel10.setText("CLEAR");
         clear.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
-        jPanel1.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 380, -1, -1));
+        jPanel1.add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 380, -1, -1));
 
         refresh.setBackground(new java.awt.Color(0, 255, 204));
         refresh.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -254,7 +259,7 @@ public class orderinfo extends javax.swing.JInternalFrame {
         REFRESH.setText("REFRESH");
         refresh.add(REFRESH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
-        jPanel1.add(refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 340, -1, -1));
+        jPanel1.add(refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 340, -1, -1));
 
         print.setBackground(new java.awt.Color(0, 255, 204));
         print.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -275,7 +280,7 @@ public class orderinfo extends javax.swing.JInternalFrame {
         jLabel3.setText("PRINT");
         print.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
-        jPanel1.add(print, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 380, -1, -1));
+        jPanel1.add(print, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 380, -1, -1));
 
         oid.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         oid.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -317,7 +322,27 @@ public class orderinfo extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(order_table);
 
-        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 360, 230));
+        jPanel1.add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 100, 340, 230));
+
+        logout.setBackground(new java.awt.Color(0, 255, 204));
+        logout.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                logoutMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                logoutMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                logoutMouseExited(evt);
+            }
+        });
+        logout.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel8.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel8.setText("LOGOUT");
+        logout.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(11, 5, -1, -1));
+
+        jPanel1.add(logout, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 360, 80, 30));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 740, 430));
 
@@ -480,6 +505,22 @@ public class orderinfo extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_order_tableMouseClicked
 
+    private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
+       JFrame mainFrame = (JFrame)SwingUtilities.getWindowAncestor(this);
+       mainFrame.dispose();
+       loginForm lf = new loginForm();
+       lf.setVisible(true);
+               
+    }//GEN-LAST:event_logoutMouseClicked
+
+    private void logoutMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseEntered
+        logout.setBackground(bodycolor);
+    }//GEN-LAST:event_logoutMouseEntered
+
+    private void logoutMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseExited
+       logout.setBackground(headcolor);
+    }//GEN-LAST:event_logoutMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel REFRESH;
@@ -498,8 +539,10 @@ public class orderinfo extends javax.swing.JInternalFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JPanel logout;
     private javax.swing.JTextField oid;
     private javax.swing.JTable order_table;
     private javax.swing.JTextField pid;
