@@ -69,8 +69,8 @@ public class registerform extends javax.swing.JFrame {
         jLabel18 = new javax.swing.JLabel();
         confirm = new javax.swing.JPasswordField();
         password = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
+        create = new javax.swing.JButton();
+        cancel = new javax.swing.JButton();
         click = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -253,25 +253,25 @@ public class registerform extends javax.swing.JFrame {
         jPanel1.add(password);
         password.setBounds(560, 290, 280, 30);
 
-        jButton1.setBackground(new java.awt.Color(102, 255, 204));
-        jButton1.setText("CREATE");
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        create.setBackground(new java.awt.Color(102, 255, 204));
+        create.setText("CREATE");
+        create.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                createActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1);
-        jButton1.setBounds(730, 380, 110, 30);
+        jPanel1.add(create);
+        create.setBounds(730, 380, 110, 30);
 
-        jButton2.setBackground(new java.awt.Color(102, 255, 204));
-        jButton2.setText("CANCEL");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        cancel.setBackground(new java.awt.Color(102, 255, 204));
+        cancel.setText("CANCEL");
+        cancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                cancelActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton2);
-        jButton2.setBounds(560, 380, 110, 30);
+        jPanel1.add(cancel);
+        cancel.setBounds(560, 380, 110, 30);
 
         click.setBackground(new java.awt.Color(255, 255, 255));
         click.setFont(new java.awt.Font("Century Gothic", 3, 14)); // NOI18N
@@ -330,7 +330,7 @@ public class registerform extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cancel1MouseExited
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    private void createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createActionPerformed
            String fname = firstname.getText();
       String lname = lastname.getText();
       String mail = email.getText();
@@ -340,13 +340,13 @@ public class registerform extends javax.swing.JFrame {
         
         if (uname.equals(""))
         {
-            JOptionPane.showMessageDialog(null, "Add a username");
+            JOptionPane.showMessageDialog(null, "All Fields Are Required!");
         }else if (pass.equals(""))
         {
             JOptionPane.showMessageDialog(null, "Add a password");
         }else if (!pass.equals(cpass))
         {
-            JOptionPane.showMessageDialog(null, "Retype the Password Again");
+            JOptionPane.showMessageDialog(null, "Password Don't Match");
         }
         
         else if (checkUsername(uname))
@@ -371,6 +371,9 @@ public class registerform extends javax.swing.JFrame {
                     ps.setString(6, cpass);
                     if(ps.executeUpdate() > 0){
                         JOptionPane.showMessageDialog(null, "New User Add");
+                        loginForm lf = new loginForm();
+                        this.dispose();
+                        lf.setVisible(true);
                     }else{
                         JOptionPane.showMessageDialog(null, "Error: Check Your Information");
                     }
@@ -380,13 +383,13 @@ public class registerform extends javax.swing.JFrame {
 
         }
         
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_createActionPerformed
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed
              loginForm lf = new loginForm();
        lf.setVisible(true);
        this.dispose();
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_cancelActionPerformed
 
     private void clickMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clickMouseClicked
         this.dispose();
@@ -459,16 +462,16 @@ public class registerform extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton cancel;
     private javax.swing.JPanel cancel1;
     private javax.swing.JLabel click;
     private javax.swing.JPasswordField confirm;
+    private javax.swing.JButton create;
     private javax.swing.JPanel create1;
     private javax.swing.JTextField email;
     private javax.swing.JTextField email1;
     private javax.swing.JTextField firstname;
     private javax.swing.JTextField fname1;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;

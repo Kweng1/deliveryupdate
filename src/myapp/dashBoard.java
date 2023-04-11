@@ -37,11 +37,9 @@ public class dashBoard extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        orderinfo = new javax.swing.JPanel();
+        deliveryrinfo = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         userni = new javax.swing.JLabel();
-        attendanceform = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
         header = new javax.swing.JPanel();
         minimize = new javax.swing.JLabel();
         close = new javax.swing.JLabel();
@@ -76,7 +74,7 @@ public class dashBoard extends javax.swing.JFrame {
         dashboard.setBackground(new java.awt.Color(0, 204, 204));
         dashboard.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
         dashboard.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        dashboard.setText("DASHBOARD");
+        dashboard.setText("PRODUCT LIST");
         dashpane1.add(dashboard, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 140, 40));
 
         navbar.add(dashpane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 210, 180, 40));
@@ -116,50 +114,30 @@ public class dashBoard extends javax.swing.JFrame {
         jLabel6.setText("WELCOME");
         navbar.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 10, 180, -1));
 
-        orderinfo.setBackground(new java.awt.Color(0, 204, 204));
-        orderinfo.addMouseListener(new java.awt.event.MouseAdapter() {
+        deliveryrinfo.setBackground(new java.awt.Color(0, 204, 204));
+        deliveryrinfo.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                orderinfoMouseClicked(evt);
+                deliveryrinfoMouseClicked(evt);
             }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
-                orderinfoMouseEntered(evt);
+                deliveryrinfoMouseEntered(evt);
             }
             public void mouseExited(java.awt.event.MouseEvent evt) {
-                orderinfoMouseExited(evt);
+                deliveryrinfoMouseExited(evt);
             }
         });
-        orderinfo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        deliveryrinfo.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel2.setText("ORDER INFORMATION");
-        orderinfo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 150, -1));
+        jLabel2.setText("DELIVERY INFORMATION");
+        deliveryrinfo.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 160, -1));
 
-        navbar.add(orderinfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 180, 40));
+        navbar.add(deliveryrinfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 180, 40));
 
         userni.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
         userni.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         userni.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         navbar.add(userni, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 180, 20));
-
-        attendanceform.setBackground(new java.awt.Color(0, 204, 204));
-        attendanceform.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                attendanceformMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                attendanceformMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                attendanceformMouseExited(evt);
-            }
-        });
-        attendanceform.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel9.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel9.setText("ATTENDANCE FORM");
-        attendanceform.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 150, -1));
-
-        navbar.add(attendanceform, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 340, 180, 40));
 
         jPanel1.add(navbar);
         navbar.setBounds(0, 0, 180, 470);
@@ -264,31 +242,18 @@ public class dashBoard extends javax.swing.JFrame {
         System.exit(0);
     }//GEN-LAST:event_closeMouseClicked
 
-    private void orderinfoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_orderinfoMouseEntered
-        orderinfo.setBackground(body);
-    }//GEN-LAST:event_orderinfoMouseEntered
+    private void deliveryrinfoMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deliveryrinfoMouseEntered
+        deliveryrinfo.setBackground(body);
+    }//GEN-LAST:event_deliveryrinfoMouseEntered
 
-    private void orderinfoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_orderinfoMouseExited
-        orderinfo.setBackground(navcolor);
-    }//GEN-LAST:event_orderinfoMouseExited
+    private void deliveryrinfoMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deliveryrinfoMouseExited
+        deliveryrinfo.setBackground(navcolor);
+    }//GEN-LAST:event_deliveryrinfoMouseExited
 
-    private void orderinfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_orderinfoMouseClicked
+    private void deliveryrinfoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deliveryrinfoMouseClicked
         orderinfo oi = new orderinfo();
      maindesktop.add(oi).setVisible(true);
-    }//GEN-LAST:event_orderinfoMouseClicked
-
-    private void attendanceformMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_attendanceformMouseClicked
-        customerReport up = new customerReport();
-      maindesktop.add(up).setVisible(true);
-    }//GEN-LAST:event_attendanceformMouseClicked
-
-    private void attendanceformMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_attendanceformMouseEntered
-         attendanceform.setBackground(body);
-    }//GEN-LAST:event_attendanceformMouseEntered
-
-    private void attendanceformMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_attendanceformMouseExited
-       attendanceform.setBackground(navcolor);
-    }//GEN-LAST:event_attendanceformMouseExited
+    }//GEN-LAST:event_deliveryrinfoMouseClicked
 
     /**
      * @param args the command line arguments
@@ -326,11 +291,11 @@ public class dashBoard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JPanel attendanceform;
     private javax.swing.JLabel close;
     private javax.swing.JPanel customer_report;
     private javax.swing.JLabel dashboard;
     private javax.swing.JPanel dashpane1;
+    private javax.swing.JPanel deliveryrinfo;
     private javax.swing.JPanel header;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -340,12 +305,10 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     public static javax.swing.JDesktopPane maindesktop;
     private javax.swing.JLabel minimize;
     private javax.swing.JPanel navbar;
-    private javax.swing.JPanel orderinfo;
     public static javax.swing.JLabel userni;
     // End of variables declaration//GEN-END:variables
 }
