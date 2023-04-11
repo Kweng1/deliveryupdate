@@ -2,8 +2,14 @@ package myapp;
 
 
 
+import config.login_db;
 import java.awt.BasicStroke;
 import java.awt.Color;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -60,7 +66,7 @@ public class loginForm extends javax.swing.JFrame {
         jPanel3 = new javax.swing.JPanel();
         minimize = new javax.swing.JLabel();
         close = new javax.swing.JLabel();
-        username1 = new javax.swing.JTextField();
+        username = new javax.swing.JTextField();
         password = new javax.swing.JPasswordField();
         jPanel4 = new javax.swing.JPanel();
         jLabel7 = new javax.swing.JLabel();
@@ -68,7 +74,7 @@ public class loginForm extends javax.swing.JFrame {
         jLabel5 = new javax.swing.JLabel();
         click = new javax.swing.JLabel();
         login1 = new javax.swing.JButton();
-        login = new javax.swing.JButton();
+        Login = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setUndecorated(true);
@@ -129,16 +135,16 @@ public class loginForm extends javax.swing.JFrame {
         });
         jPanel3.add(close, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 0, 30, 30));
 
-        username1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        username1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
-        username1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        username1.setOpaque(false);
-        username1.addActionListener(new java.awt.event.ActionListener() {
+        username.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        username.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        username.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        username.setOpaque(false);
+        username.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                username1ActionPerformed(evt);
+                usernameActionPerformed(evt);
             }
         });
-        jPanel3.add(username1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 320, 40));
+        jPanel3.add(username, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 320, 40));
 
         password.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         password.setHorizontalAlignment(javax.swing.JTextField.CENTER);
@@ -195,20 +201,20 @@ public class loginForm extends javax.swing.JFrame {
         });
         jPanel4.add(login1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 250, 91, 33));
 
-        login.setBackground(new java.awt.Color(0, 204, 204));
-        login.setText("LOGIN");
-        login.setBorder(null);
-        login.addMouseListener(new java.awt.event.MouseAdapter() {
+        Login.setBackground(new java.awt.Color(0, 204, 204));
+        Login.setText("LOGIN");
+        Login.setBorder(null);
+        Login.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                loginMouseClicked(evt);
+                LoginMouseClicked(evt);
             }
         });
-        login.addActionListener(new java.awt.event.ActionListener() {
+        Login.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                loginActionPerformed(evt);
+                LoginActionPerformed(evt);
             }
         });
-        jPanel4.add(login, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 91, 33));
+        jPanel4.add(Login, new org.netbeans.lib.awtextra.AbsoluteConstraints(250, 250, 91, 33));
 
         jPanel3.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 40, 390, 400));
 
@@ -244,9 +250,9 @@ public class loginForm extends javax.swing.JFrame {
             }
     }//GEN-LAST:event_closeMouseClicked
 
-    private void username1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_username1ActionPerformed
+    private void usernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_usernameActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_username1ActionPerformed
+    }//GEN-LAST:event_usernameActionPerformed
 
     private void clickMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_clickMouseClicked
         this.dispose();
@@ -267,15 +273,15 @@ public class loginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_login1MouseClicked
 
     private void login1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_login1ActionPerformed
-        username1.setText(null);
+        username.setText(null);
         password.setText(null);
     }//GEN-LAST:event_login1ActionPerformed
 
-    private void loginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginMouseClicked
-        String user = username1.getText();
+    private void LoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginMouseClicked
+        String user = username.getText();
         String pass = password.getText();
         if(user.isEmpty()|| user.equals("") || pass.isEmpty() || pass.equals("")){
-            username1.setText("Username");
+            username.setText("Username");
             password.setText("Password");
             password.setEchoChar((char)0);
         }else{
@@ -286,28 +292,76 @@ public class loginForm extends javax.swing.JFrame {
             this.setDefaultCloseOperation(this.HIDE_ON_CLOSE);
             this.dispose();
         }
-    }//GEN-LAST:event_loginMouseClicked
+    }//GEN-LAST:event_LoginMouseClicked
 
-    private void loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginActionPerformed
-        String user = username1.getText();
-        String pass = password.getText();
-        if(user.isEmpty()|| user.equals("") || pass.isEmpty() || pass.equals("")){
-            username1.setText("Username");
-            password.setText("Password");
-            password.setEchoChar((char)0);
-        }else{
-            dashBoard db = new dashBoard();
-            db.setVisible(true);
-            dashBoard.firstname.setText(""+user);
-            this.setVisible(false);
-            this.setDefaultCloseOperation(this.HIDE_ON_CLOSE);
-            this.dispose();
+    private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
+       // String user = username.getText();
+       // String pass = password.getText();
+        //if(user.isEmpty()|| user.equals("") || pass.isEmpty() || pass.equals("")){
+        //    username.setText("Username");
+        //    password.setText("Password");
+        //    password.setEchoChar((char)0);
+        //}else{
+          //  dashBoard db = new dashBoard();
+          //  db.setVisible(true);
+          //  dashBoard.firstname.setText(""+user);
+           // this.setVisible(false);
+          // this.setDefaultCloseOperation(this.HIDE_ON_CLOSE);
+           // this.dispose();
+        
+        
+         PreparedStatement ps;      
+        ResultSet rs;
+        
+        // get the username & password
+        String user = username.getText();
+        String pass = String.valueOf(password.getPassword());
+         
+       
+        String query = "SELECT * FROM `user_db` WHERE `user_name`= ? AND `pass_word` = ?";
+        
+      
+       
+            
+            try {
+            ps = login_db.getConnection().prepareStatement(query);
+          
+            
+            ps.setString(1, user);
+            ps.setString(2, pass);
+            
+            rs = ps.executeQuery();
+            
+            if(rs.next())
+            {
+               dashBoard db = new dashBoard();
+               db.setVisible(true);
+               db.pack();
+               db.setLocationRelativeTo(null);
+              
+               db.userni.setText("Welcome "+user+ "!");
+               
+               this.dispose();
+                
+            }
+            else{
+               
+               JOptionPane.showMessageDialog(null, "Incorrect Username or Password");
+            }
+            
+        } catch (SQLException ex) {
+            Logger.getLogger(loginForm.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }//GEN-LAST:event_loginActionPerformed
+            
+        
 
-    /**
-     * @param args the command line arguments
-     */
+        
+        
+       
+    }//GEN-LAST:event_LoginActionPerformed
+
+    
+  
     public static void main(String args[]) {
         /* Set the Nimbus look and feel */
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -341,6 +395,7 @@ public class loginForm extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton Login;
     private javax.swing.JLabel click;
     private javax.swing.JLabel close;
     private javax.swing.JLabel jLabel1;
@@ -353,10 +408,9 @@ public class loginForm extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
-    private javax.swing.JButton login;
     private javax.swing.JButton login1;
     private javax.swing.JLabel minimize;
     private javax.swing.JPasswordField password;
-    private javax.swing.JTextField username1;
+    public static javax.swing.JTextField username;
     // End of variables declaration//GEN-END:variables
 }

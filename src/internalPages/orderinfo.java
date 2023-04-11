@@ -107,19 +107,12 @@ public class orderinfo extends javax.swing.JInternalFrame {
         pid = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         cuorder = new javax.swing.JTextField();
-        jLabel11 = new javax.swing.JLabel();
-        cusize = new javax.swing.JTextField();
-        jLabel15 = new javax.swing.JLabel();
-        cuquant = new javax.swing.JTextField();
-        jLabel14 = new javax.swing.JLabel();
-        cuprice = new javax.swing.JTextField();
         jLabel16 = new javax.swing.JLabel();
         cutp = new javax.swing.JTextField();
         cid = new javax.swing.JTextField();
         jLabel17 = new javax.swing.JLabel();
         cucon = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
-        calculate = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(1, 121, 111));
         setPreferredSize(new java.awt.Dimension(736, 436));
@@ -170,7 +163,7 @@ public class orderinfo extends javax.swing.JInternalFrame {
         });
         jScrollPane1.setViewportView(order_table);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 90, 410, 210));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 110, 380, 190));
 
         insertData1.setBackground(new java.awt.Color(0, 255, 204));
         insertData1.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -191,7 +184,7 @@ public class orderinfo extends javax.swing.JInternalFrame {
         jLabel12.setText("ADD");
         insertData1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
-        getContentPane().add(insertData1, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 320, 80, 30));
+        getContentPane().add(insertData1, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 320, 80, 30));
 
         update.setBackground(new java.awt.Color(0, 255, 204));
         update.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -212,7 +205,7 @@ public class orderinfo extends javax.swing.JInternalFrame {
         jLabel4.setText("UPDATE");
         update.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
-        getContentPane().add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 320, 80, 30));
+        getContentPane().add(update, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 320, 80, 30));
 
         delete.setBackground(new java.awt.Color(0, 255, 204));
         delete.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -233,7 +226,7 @@ public class orderinfo extends javax.swing.JInternalFrame {
         jLabel7.setText("DELETE");
         delete.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
-        getContentPane().add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(550, 360, 80, 30));
+        getContentPane().add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(480, 360, 80, 30));
 
         clear.setBackground(new java.awt.Color(0, 255, 204));
         clear.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -255,7 +248,7 @@ public class orderinfo extends javax.swing.JInternalFrame {
         jLabel10.setText("CLEAR");
         clear.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
-        getContentPane().add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 360, 80, 30));
+        getContentPane().add(clear, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 360, 80, 30));
 
         refresh.setBackground(new java.awt.Color(0, 255, 204));
         refresh.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -277,7 +270,7 @@ public class orderinfo extends javax.swing.JInternalFrame {
         REFRESH.setText("REFRESH");
         refresh.add(REFRESH, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
-        getContentPane().add(refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 320, 80, 30));
+        getContentPane().add(refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 320, 80, 30));
 
         print.setBackground(new java.awt.Color(0, 255, 204));
         print.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -298,35 +291,35 @@ public class orderinfo extends javax.swing.JInternalFrame {
         jLabel3.setText("PRINT");
         print.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
 
-        getContentPane().add(print, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 360, 80, 30));
+        getContentPane().add(print, new org.netbeans.lib.awtextra.AbsoluteConstraints(570, 360, 80, 30));
 
         jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel6.setText("C_ID:");
-        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 40, 20));
+        getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 40, 20));
 
         oid.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         oid.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(oid, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 80, 220, 20));
+        getContentPane().add(oid, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 220, 20));
 
         jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel13.setText("Name: ");
-        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 140, 50, 20));
+        getContentPane().add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 50, 20));
 
         cuname.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cuname.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(cuname, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 220, 20));
+        getContentPane().add(cuname, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 220, 20));
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel8.setText("Contact no.");
-        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 80, 20));
+        getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, 80, 20));
 
         cuadd.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cuadd.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(cuadd, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 220, 20));
+        getContentPane().add(cuadd, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 220, 20));
 
         jLabel9.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel9.setText("P_ID:");
-        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 230, -1, -1));
+        getContentPane().add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, -1, -1));
 
         pid.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         pid.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
@@ -335,77 +328,39 @@ public class orderinfo extends javax.swing.JInternalFrame {
                 pidActionPerformed(evt);
             }
         });
-        getContentPane().add(pid, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 220, 20));
+        getContentPane().add(pid, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 220, 20));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel2.setText("Order:");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 260, 50, -1));
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 50, -1));
 
         cuorder.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cuorder.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(cuorder, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 220, 20));
-
-        jLabel11.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel11.setText("Size:");
-        getContentPane().add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 290, 50, 20));
-
-        cusize.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        cusize.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        cusize.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cusizeActionPerformed(evt);
-            }
-        });
-        getContentPane().add(cusize, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 220, 20));
-
-        jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel15.setText("Quantity:");
-        getContentPane().add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 80, 20));
-
-        cuquant.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        cuquant.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(cuquant, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 220, 20));
-
-        jLabel14.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        jLabel14.setText("Price:");
-        getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 350, 80, 20));
-
-        cuprice.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        cuprice.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(cuprice, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 350, 220, 20));
+        getContentPane().add(cuorder, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 290, 220, 20));
 
         jLabel16.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel16.setText("Total Price:");
-        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 380, 80, 20));
+        getContentPane().add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 320, 80, 20));
 
         cutp.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cutp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(cutp, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 380, 220, 20));
+        getContentPane().add(cutp, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 320, 220, 20));
 
         cid.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cid.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(cid, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 220, 20));
+        getContentPane().add(cid, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 220, 20));
 
         jLabel17.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel17.setText("O_ID:");
-        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 40, -1));
+        getContentPane().add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 110, 40, -1));
 
         cucon.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         cucon.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        getContentPane().add(cucon, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 220, 20));
+        getContentPane().add(cucon, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 220, 20));
 
         jLabel18.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel18.setText("Address:");
-        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 70, 20));
-
-        calculate.setBackground(new java.awt.Color(0, 255, 204));
-        calculate.setText("CALCULATE");
-        calculate.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                calculateMouseClicked(evt);
-            }
-        });
-        getContentPane().add(calculate, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 330, -1, 40));
+        getContentPane().add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 200, 70, 20));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -563,10 +518,6 @@ public class orderinfo extends javax.swing.JInternalFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_pidActionPerformed
 
-    private void cusizeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cusizeActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_cusizeActionPerformed
-
     private void order_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_order_tableMouseClicked
         int rowIndex = order_table.getSelectedRow();
         if(rowIndex < 0){
@@ -588,36 +539,22 @@ public class orderinfo extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_order_tableMouseClicked
 
-    private void calculateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_calculateMouseClicked
-       double a = Double.parseDouble(cuquant.getText());
-       int b = Integer.parseInt(cuprice.getText());
-       double totalp = a * b;
-       cutp.setText (""+totalp);
-    }//GEN-LAST:event_calculateMouseClicked
-
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel REFRESH;
-    private javax.swing.JButton calculate;
     private javax.swing.JTextField cid;
     private javax.swing.JPanel clear;
     private javax.swing.JTextField cuadd;
     private javax.swing.JTextField cucon;
     private javax.swing.JTextField cuname;
     private javax.swing.JTextField cuorder;
-    private javax.swing.JTextField cuprice;
-    private javax.swing.JTextField cuquant;
-    private javax.swing.JTextField cusize;
     private javax.swing.JTextField cutp;
     private javax.swing.JPanel delete;
     private javax.swing.JPanel insertData1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;

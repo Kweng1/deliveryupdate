@@ -39,7 +39,7 @@ public class dashBoard extends javax.swing.JFrame {
         jLabel6 = new javax.swing.JLabel();
         orderinfo = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
-        firstname = new javax.swing.JLabel();
+        userni = new javax.swing.JLabel();
         attendanceform = new javax.swing.JPanel();
         jLabel9 = new javax.swing.JLabel();
         header = new javax.swing.JPanel();
@@ -136,9 +136,10 @@ public class dashBoard extends javax.swing.JFrame {
 
         navbar.add(orderinfo, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 300, 180, 40));
 
-        firstname.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        firstname.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
-        navbar.add(firstname, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 160, 130, 20));
+        userni.setFont(new java.awt.Font("Century Gothic", 1, 12)); // NOI18N
+        userni.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        userni.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        navbar.add(userni, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 160, 180, 20));
 
         attendanceform.setBackground(new java.awt.Color(0, 204, 204));
         attendanceform.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -217,7 +218,7 @@ public class dashBoard extends javax.swing.JFrame {
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(0, 0, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, 906, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -330,7 +331,6 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JPanel customer_report;
     private javax.swing.JLabel dashboard;
     private javax.swing.JPanel dashpane1;
-    public static javax.swing.JLabel firstname;
     private javax.swing.JPanel header;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
@@ -346,5 +346,6 @@ public class dashBoard extends javax.swing.JFrame {
     private javax.swing.JLabel minimize;
     private javax.swing.JPanel navbar;
     private javax.swing.JPanel orderinfo;
+    public static javax.swing.JLabel userni;
     // End of variables declaration//GEN-END:variables
 }
