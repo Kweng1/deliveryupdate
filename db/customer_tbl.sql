@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 27, 2023 at 03:38 AM
+-- Generation Time: Apr 12, 2023 at 03:30 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -31,6 +31,7 @@ CREATE TABLE `customer_tbl` (
   `c_id` int(20) NOT NULL,
   `c_name` varchar(50) NOT NULL,
   `c_add` varchar(50) NOT NULL,
+  `c_con` varchar(50) NOT NULL,
   `c_order` varchar(20) NOT NULL,
   `c_size` varchar(50) NOT NULL,
   `c_quant` int(50) NOT NULL,
@@ -42,11 +43,11 @@ CREATE TABLE `customer_tbl` (
 -- Dumping data for table `customer_tbl`
 --
 
-INSERT INTO `customer_tbl` (`c_id`, `c_name`, `c_add`, `c_order`, `c_size`, `c_quant`, `c_price`, `c_tp`) VALUES
-(8, 'Kyle', 'Talisay', 'Hawaiian', 'small', 2, 200, 400),
-(9, 'Aeron Villafuerte', 'Argao', 'Italian Pizza', 'Small', 1, 120, 120),
-(10, 'Caryll', 'Sibonga', 'Hawaiian', 'Medium', 2, 150, 300),
-(12, 'aa', 'aa', 'aaa', 'aaaa', 111, 1111, 123321);
+INSERT INTO `customer_tbl` (`c_id`, `c_name`, `c_add`, `c_con`, `c_order`, `c_size`, `c_quant`, `c_price`, `c_tp`) VALUES
+(8, 'Kyle', 'Talisay', '', 'Hawaiian', 'small', 2, 200, 400),
+(9, 'Aeron Villafuerte', 'Argao', '', 'Italian Pizza', 'Small', 1, 120, 120),
+(10, 'Caryll', 'Sibonga', '', 'Hawaiian', 'Medium', 2, 150, 300),
+(13, 'Sweet Venice', 'Minglanilla', '', 'Hawaiian', 'Small', 2, 100, 200);
 
 --
 -- Indexes for dumped tables
@@ -66,7 +67,7 @@ ALTER TABLE `customer_tbl`
 -- AUTO_INCREMENT for table `customer_tbl`
 --
 ALTER TABLE `customer_tbl`
-  MODIFY `c_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `c_id` int(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

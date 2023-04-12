@@ -62,8 +62,9 @@ public class customerReport extends javax.swing.JInternalFrame {
         cid.setText("");
          corder.setText("");
           cprice.setText("");
-           cquant.setText("");
+           size.setText("");
             ctp.setText("");
+             cquant.setText("");
         
         
     }
@@ -81,8 +82,6 @@ public class customerReport extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        insertData = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
         update = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         search = new javax.swing.JPanel();
@@ -109,12 +108,16 @@ public class customerReport extends javax.swing.JInternalFrame {
         ctp = new javax.swing.JTextField();
         jLabel9 = new javax.swing.JLabel();
         corder = new javax.swing.JTextField();
-        cquant = new javax.swing.JTextField();
+        size = new javax.swing.JTextField();
         cprice = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
         Quantity = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
+        cquant = new javax.swing.JTextField();
+        Quantity1 = new javax.swing.JLabel();
+        add = new javax.swing.JPanel();
+        jLabel14 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(736, 436));
 
@@ -124,27 +127,6 @@ public class customerReport extends javax.swing.JInternalFrame {
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel1.setText("COSTUMER REPORT");
         jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 240, 20));
-
-        insertData.setBackground(new java.awt.Color(0, 255, 204));
-        insertData.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                insertDataMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                insertDataMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                insertDataMouseExited(evt);
-            }
-        });
-        insertData.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel11.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("ADD");
-        insertData.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
-
-        jPanel1.add(insertData, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 80, 80, 30));
 
         update.setBackground(new java.awt.Color(0, 255, 204));
         update.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -244,10 +226,12 @@ public class customerReport extends javax.swing.JInternalFrame {
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 70, 20));
 
         ccon.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ccon.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         ccon.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(ccon, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 340, 220, 20));
 
         cname.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cname.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         cname.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(cname, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 280, 220, 20));
 
@@ -295,6 +279,7 @@ public class customerReport extends javax.swing.JInternalFrame {
         jPanel1.add(print, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 180, 80, 30));
 
         cadd.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cadd.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         cadd.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(cadd, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 310, 220, 20));
 
@@ -325,10 +310,12 @@ public class customerReport extends javax.swing.JInternalFrame {
         jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 280, 60, 20));
 
         cid.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cid.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         cid.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(cid, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 250, 220, 20));
 
         ctp.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ctp.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         ctp.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(ctp, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 370, 220, 20));
 
@@ -337,14 +324,17 @@ public class customerReport extends javax.swing.JInternalFrame {
         jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(360, 372, 100, 20));
 
         corder.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        corder.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         corder.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(corder, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 370, 220, 20));
 
-        cquant.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        cquant.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-        jPanel1.add(cquant, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 270, 220, 20));
+        size.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        size.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        size.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(size, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 250, 220, 20));
 
         cprice.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cprice.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         cprice.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(cprice, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 310, 220, 20));
 
@@ -353,8 +343,8 @@ public class customerReport extends javax.swing.JInternalFrame {
         jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 370, 60, 20));
 
         Quantity.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
-        Quantity.setText("Quantity:");
-        jPanel1.add(Quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 270, 80, 20));
+        Quantity.setText("Size:");
+        jPanel1.add(Quantity, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 250, 80, 20));
 
         jLabel15.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
         jLabel15.setText("Price:");
@@ -368,6 +358,36 @@ public class customerReport extends javax.swing.JInternalFrame {
             }
         });
         jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(510, 340, -1, -1));
+
+        cquant.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        cquant.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        cquant.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+        jPanel1.add(cquant, new org.netbeans.lib.awtextra.AbsoluteConstraints(450, 280, 220, 20));
+
+        Quantity1.setFont(new java.awt.Font("Times New Roman", 1, 14)); // NOI18N
+        Quantity1.setText("Quantity:");
+        jPanel1.add(Quantity1, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 280, 80, 20));
+
+        add.setBackground(new java.awt.Color(0, 255, 204));
+        add.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                addMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                addMouseExited(evt);
+            }
+        });
+        add.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel14.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel14.setText("ADD");
+        add.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
+
+        jPanel1.add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 80, 80, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -414,9 +434,10 @@ public class customerReport extends javax.swing.JInternalFrame {
          cid.setText(null);
          cadd.setText(null);
          corder.setText(null);
-         cquant.setText(null);
+         size.setText(null);
          cprice.setText(null);
          ctp.setText(null);
+         cquant.setText(null);
             
     }//GEN-LAST:event_clearMouseClicked
 
@@ -459,7 +480,7 @@ public class customerReport extends javax.swing.JInternalFrame {
        dbconnector dbc = new dbconnector();
         int num = dbc.updateData("UPDATE customer_tbl "
                 + "SET c_id = '"+cid.getText()+"', c_name='"+cname.getText()+"', "
-                        + "c_add ='"+cadd.getText()+"',c_con='"+ccon.getText()+"',c_order='"+corder.getText()+"',c_quant='"+cquant.getText()+"', c_price='"+cprice.getText()+
+                        + "c_add ='"+cadd.getText()+"',c_con='"+ccon.getText()+"',c_order='"+corder.getText()+"',c_quant='"+size.getText()+"', c_price='"+cprice.getText()+
                 "',c_tp='"+ctp.getText()+"'  "
                                 + "WHERE c_id = '"+cid.getText()+"'");
        
@@ -472,22 +493,6 @@ public class customerReport extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_updateMouseClicked
 
-    private void insertDataMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_insertDataMouseExited
-        insertData.setBackground(headcolor);
-    }//GEN-LAST:event_insertDataMouseExited
-
-    private void insertDataMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_insertDataMouseEntered
-        insertData.setBackground(bodycolor);
-    }//GEN-LAST:event_insertDataMouseEntered
-
-    private void insertDataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_insertDataMouseClicked
-        dbconnector dbc = new dbconnector();
-        dbc.insertData("INSERT INTO customer_tbl ( c_name, c_add,c_con, c_order, c_quant, c_price, c_tp) "
-                + "VALUES ( '"+cname.getText()+"','"+cadd.getText()+"','"+ccon.getText()+"','"+corder.getText()+"','" +cquant.getText()+"','"+cprice.getText()+"','"+ctp.getText()+"')");
-        displayData();
-        reset();
-    }//GEN-LAST:event_insertDataMouseClicked
-
     private void customer_tblMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_customer_tblMouseClicked
        int rowIndex = customer_tbl.getSelectedRow();
       if(rowIndex < 0){
@@ -499,9 +504,10 @@ public class customerReport extends javax.swing.JInternalFrame {
           cadd.setText(""+model.getValueAt(rowIndex, 2));
           ccon.setText(""+model.getValueAt(rowIndex, 3));
            corder.setText(""+model.getValueAt(rowIndex, 4));
-           cprice.setText(""+model.getValueAt(rowIndex, 5));
+           size.setText(""+model.getValueAt(rowIndex, 5));
            cquant.setText(""+model.getValueAt(rowIndex, 6));
-           ctp.setText(""+model.getValueAt(rowIndex, 7));
+           cprice.setText(""+model.getValueAt(rowIndex, 7));
+           ctp.setText(""+model.getValueAt(rowIndex, 8));
          
           
           
@@ -558,10 +564,29 @@ public class customerReport extends javax.swing.JInternalFrame {
        ctp.setText (""+totalp);
     }//GEN-LAST:event_jButton1MouseClicked
 
+    private void addMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMouseClicked
+        dbconnector dbc = new dbconnector();
+        dbc.insertData("INSERT INTO customer_tbl ( c_name, c_add,c_con, c_order, c_quant, c_price, c_tp, c_size) "
+                + "VALUES ( '"+cname.getText()+"','"+cadd.getText()+"','"+ccon.getText()+"','"+corder.getText()+"','" +cquant.getText()+"','"+cprice.getText()+"','"+ctp.getText()+"','"+size.getText()+"')");
+        JOptionPane.showMessageDialog(null, "Add Successfully!");
+        displayData();
+        reset();
+    }//GEN-LAST:event_addMouseClicked
+
+    private void addMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMouseEntered
+         add.setBackground(bodycolor);
+    }//GEN-LAST:event_addMouseEntered
+
+    private void addMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMouseExited
+          add.setBackground(headcolor);
+    }//GEN-LAST:event_addMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel Quantity;
+    private javax.swing.JLabel Quantity1;
     private javax.swing.JLabel REFRESH;
+    private javax.swing.JPanel add;
     private javax.swing.JTextField cadd;
     private javax.swing.JTextField ccon;
     private javax.swing.JTextField cid;
@@ -573,13 +598,12 @@ public class customerReport extends javax.swing.JInternalFrame {
     private javax.swing.JTextField ctp;
     private javax.swing.JTable customer_tbl;
     private javax.swing.JPanel delete;
-    private javax.swing.JPanel insertData;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -595,6 +619,7 @@ public class customerReport extends javax.swing.JInternalFrame {
     private javax.swing.JPanel refresh;
     private javax.swing.JPanel search;
     private javax.swing.JTextField searchbar;
+    private javax.swing.JTextField size;
     private javax.swing.JPanel update;
     // End of variables declaration//GEN-END:variables
 }

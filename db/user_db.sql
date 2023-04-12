@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 11, 2023 at 03:28 PM
+-- Generation Time: Apr 12, 2023 at 03:30 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.2.0
 
@@ -47,7 +47,10 @@ INSERT INTO `user_db` (`f_name`, `l_name`, `email`, `user_name`, `pass_word`, `c
 ('', '', '', 'shano@gmail.com', 'shnoasff', 'shnoasff'),
 ('', '', '', 'buangko@gmail.com', 'buangko', 'buangko'),
 ('Aeron', 'Geverola', 'aerongeverola@gmail.com', 'aerong', 'zxcv', 'zxcv'),
-('aeron', 'geverola', 'acegeverola@gmail.com', 'aeronvg', 'indang', 'indang');
+('aeron', 'geverola', 'acegeverola@gmail.com', 'aeronvg', 'indang', 'indang'),
+('Judy', 'Tapere', 'judytapere259@gmail.com', 'juday', 'judayy', 'judayy'),
+('kyle', 'kyle', 'kyle@gmail.com', 'kyle', 'kyle', 'kyle'),
+('Mike', 'mike', 'mike', 'mike', 'mike', 'mike');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

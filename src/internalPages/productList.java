@@ -79,8 +79,6 @@ public class productList extends javax.swing.JInternalFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        insertData = new javax.swing.JPanel();
-        jLabel11 = new javax.swing.JLabel();
         update = new javax.swing.JPanel();
         jLabel4 = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
@@ -103,6 +101,9 @@ public class productList extends javax.swing.JInternalFrame {
         pid = new javax.swing.JTextField();
         pl = new javax.swing.JTextField();
         jLabel12 = new javax.swing.JLabel();
+        jSeparator1 = new javax.swing.JSeparator();
+        add = new javax.swing.JPanel();
+        jLabel5 = new javax.swing.JLabel();
 
         setPreferredSize(new java.awt.Dimension(736, 436));
 
@@ -110,29 +111,9 @@ public class productList extends javax.swing.JInternalFrame {
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 1, 24)); // NOI18N
+        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("PRODUCT LIST");
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(240, 10, 240, 30));
-
-        insertData.setBackground(new java.awt.Color(0, 255, 204));
-        insertData.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                insertDataMouseClicked(evt);
-            }
-            public void mouseEntered(java.awt.event.MouseEvent evt) {
-                insertDataMouseEntered(evt);
-            }
-            public void mouseExited(java.awt.event.MouseEvent evt) {
-                insertDataMouseExited(evt);
-            }
-        });
-        insertData.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel11.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
-        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel11.setText("ADD");
-        insertData.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 80, 30));
-
-        jPanel1.add(insertData, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 80, 30));
+        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 700, 30));
 
         update.setBackground(new java.awt.Color(0, 255, 204));
         update.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -186,23 +167,25 @@ public class productList extends javax.swing.JInternalFrame {
 
         jPanel1.add(delete, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 360, 80, 30));
 
-        jLabel2.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel2.setText("MEDIUM:");
         jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 90, 30));
 
-        jLabel6.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel6.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel6.setText("ID:");
         jPanel1.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 40, 30));
 
-        jLabel8.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel8.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel8.setText("SMALL:");
         jPanel1.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, 70, 30));
 
         pm.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        pm.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         pm.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(pm, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 210, 220, 30));
 
         pname.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        pname.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         pname.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(pname, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 130, 220, 30));
 
@@ -250,6 +233,7 @@ public class productList extends javax.swing.JInternalFrame {
         jPanel1.add(print, new org.netbeans.lib.awtextra.AbsoluteConstraints(260, 360, 80, 30));
 
         ps.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        ps.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         ps.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(ps, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 170, 220, 30));
 
@@ -275,21 +259,45 @@ public class productList extends javax.swing.JInternalFrame {
 
         jPanel1.add(refresh, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 360, 80, 30));
 
-        jLabel13.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel13.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel13.setText("Name: ");
-        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, 70, 30));
+        jPanel1.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 130, 70, 30));
 
         pid.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        pid.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         pid.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(pid, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 90, 220, 30));
 
         pl.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        pl.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         pl.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.add(pl, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 260, 220, 30));
 
-        jLabel12.setFont(new java.awt.Font("Century Gothic", 1, 18)); // NOI18N
+        jLabel12.setFont(new java.awt.Font("Times New Roman", 1, 18)); // NOI18N
         jLabel12.setText("LARGE:");
-        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 60, 30));
+        jPanel1.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, 80, 30));
+        jPanel1.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 700, 10));
+
+        add.setBackground(new java.awt.Color(0, 255, 204));
+        add.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                addMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                addMouseExited(evt);
+            }
+        });
+        add.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel5.setFont(new java.awt.Font("Century Gothic", 1, 14)); // NOI18N
+        jLabel5.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel5.setText("ADD");
+        add.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -1, 80, 30));
+
+        jPanel1.add(add, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 310, 80, 30));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -374,23 +382,6 @@ public class productList extends javax.swing.JInternalFrame {
         }
     }//GEN-LAST:event_updateMouseClicked
 
-    private void insertDataMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_insertDataMouseExited
-        insertData.setBackground(headcolor);
-    }//GEN-LAST:event_insertDataMouseExited
-
-    private void insertDataMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_insertDataMouseEntered
-        insertData.setBackground(bodycolor);
-    }//GEN-LAST:event_insertDataMouseEntered
-
-    private void insertDataMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_insertDataMouseClicked
-         dbconnector dbc = new dbconnector();
-        dbc.insertData("INSERT INTO product_tbl ( p_name, p_small, p_medium, p_large) "
-                
-            + "VALUES ( '"+pname.getText()+"','"+ps.getText()+"','"+pm.getText()+"','"+pl.getText()+"')");
-        displayData();
-        reset();
-    }//GEN-LAST:event_insertDataMouseClicked
-
     private void pr_tableMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_pr_tableMouseClicked
        int rowIndex = pr_table.getSelectedRow();
       if(rowIndex < 0){
@@ -448,25 +439,53 @@ public class productList extends javax.swing.JInternalFrame {
 
     }//GEN-LAST:event_refreshMouseExited
 
+    private void addMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMouseClicked
+        dbconnector dbc = new dbconnector();
+        dbc.insertData("INSERT INTO product_tbl ( p_name, p_small, p_medium, p_large) "
+                
+            + "VALUES ( '"+pname.getText()+"','"+ps.getText()+"','"+pm.getText()+"','"+pl.getText()+"')");
+       
+        JOptionPane.showMessageDialog(null, "Add Successfully!");
+        displayData();
+        reset();
+        
+        
+           
+        
+          
+           
+           
+        
+    }//GEN-LAST:event_addMouseClicked
+
+    private void addMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMouseEntered
+        add.setBackground(bodycolor);
+    }//GEN-LAST:event_addMouseEntered
+
+    private void addMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMouseExited
+        add.setBackground(headcolor);
+    }//GEN-LAST:event_addMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel REFRESH;
+    private javax.swing.JPanel add;
     private javax.swing.JPanel clear;
     private javax.swing.JPanel delete;
-    private javax.swing.JPanel insertData;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JTextField pid;
     private javax.swing.JTextField pl;
     private javax.swing.JTextField pm;

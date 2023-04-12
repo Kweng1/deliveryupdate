@@ -35,10 +35,10 @@ public class dbconnector {
             pstmt.executeUpdate();
             System.out.println("Inserted Successfully!");
             pstmt.close();
-            result =1;
+            
             }catch(SQLException e){
                 System.out.println("Connection Error: "+e);
-                result = 0;
+               
             }
     }
    
