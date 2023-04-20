@@ -8,13 +8,14 @@ package myapp;
 import config.dbconnector;
 import config.login_db;
 import java.awt.Color;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
-import net.proteanit.sql.DbUtils;
 
 /**
  *
@@ -27,7 +28,12 @@ public class registerform extends javax.swing.JFrame {
         initComponents();
     }
     
-     
+   public String hashPassword(String password) throws NoSuchAlgorithmException {
+    MessageDigest md = MessageDigest.getInstance("SHA-256");
+    md.update(password.getBytes());
+    byte[] digest = md.digest();
+    return String.format("%064x", new java.math.BigInteger(1, digest));
+}  
 
      Color navcolor= new Color(204,204,204);
     Color headcolor= new Color(153,153,153);
@@ -331,8 +337,8 @@ public class registerform extends javax.swing.JFrame {
     }//GEN-LAST:event_cancel1MouseExited
 
     private void createActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_createActionPerformed
-           String fname = firstname.getText();
-      String lname = lastname.getText();
+     String fname = firstname.getText();
+         String lname = lastname.getText();
       String mail = email.getText();
         String uname = username.getText();
         String pass = String.valueOf(password.getPassword());
@@ -354,35 +360,33 @@ public class registerform extends javax.swing.JFrame {
              JOptionPane.showMessageDialog(null, "This Username Already Exist");
         }
         else{
-        
-        
         PreparedStatement ps;
-        ResultSet rs;
-        String registerUserQuery = "INSERT INTO `user_db`(`f_name`, `l_name`, `email`, `user_name`, `pass_word`, `con_pass`) VALUES (?,?,?,?,?,?)";
- 
-                try {
+ResultSet rs;
+String registerUserQuery = "INSERT INTO `user_db`(`f_name`, `l_name`, `email`, `user_name`, `pass_word`, `con_pass`) VALUES (?,?,?,?,?,?)";
 
-                    ps = login_db.getConnection().prepareStatement(registerUserQuery);
-                    ps.setString(1, fname);
-                    ps.setString(2, lname);
-                    ps.setString(3, mail);
-                    ps.setString(4, uname);
-                    ps.setString(5, pass);
-                    ps.setString(6, cpass);
-                    if(ps.executeUpdate() > 0){
-                        JOptionPane.showMessageDialog(null, "New User Add");
-                        loginForm lf = new loginForm();
-                        this.dispose();
-                        lf.setVisible(true);
-                    }else{
-                        JOptionPane.showMessageDialog(null, "Error: Check Your Information");
-                    }
-                } catch (SQLException ex) {
-                    Logger.getLogger(registerform.class.getName()).log(Level.SEVERE, null, ex);
-                }
-
-        }
+try {
+    ps = login_db.getConnection().prepareStatement(registerUserQuery);
+    ps.setString(1, fname);
+    ps.setString(2, lname);
+    ps.setString(3, mail);
+    ps.setString(4, uname);
+    ps.setString(5, hashPassword(pass));
+    ps.setString(6, hashPassword(cpass));
+    if(ps.executeUpdate() > 0){
+        JOptionPane.showMessageDialog(null, "New User Add");
+        loginForm lf = new loginForm();
+        this.dispose();
+        lf.setVisible(true);
+    }else{
+        JOptionPane.showMessageDialog(null, "Error: Check Your Information");
+    }
+} catch (SQLException ex) {
+    Logger.getLogger(registerform.class.getName()).log(Level.SEVERE, null, ex);
+}catch (NoSuchAlgorithmException ex) {
+    Logger.getLogger(registerform.class.getName()).log(Level.SEVERE, null, ex); 
         
+        }
+        }
     }//GEN-LAST:event_createActionPerformed
 
     private void cancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelActionPerformed

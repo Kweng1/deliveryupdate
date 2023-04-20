@@ -450,12 +450,6 @@ public class productList extends javax.swing.JInternalFrame {
         reset();
         
         
-           
-        
-          
-           
-           
-        
     }//GEN-LAST:event_addMouseClicked
 
     private void addMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMouseEntered

@@ -5,6 +5,8 @@ package myapp;
 import config.login_db;
 import java.awt.BasicStroke;
 import java.awt.Color;
+import java.security.MessageDigest;
+import java.security.NoSuchAlgorithmException;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -32,6 +34,12 @@ public class loginForm extends javax.swing.JFrame {
     public loginForm() {
         initComponents();
     }
+     public String hashPassword(String password) throws NoSuchAlgorithmException {
+    MessageDigest md = MessageDigest.getInstance("SHA-256");
+    md.update(password.getBytes());
+    byte[] digest = md.digest();
+    return String.format("%064x", new java.math.BigInteger(1, digest));
+}
     
     Color hover = new Color(255,255,255);
     Color defbutton = new Color(153,153,153);
@@ -278,20 +286,7 @@ public class loginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_login1ActionPerformed
 
     private void LoginMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LoginMouseClicked
-        String user = username.getText();
-        String pass = password.getText();
-        if(user.isEmpty()|| user.equals("") || pass.isEmpty() || pass.equals("")){
-            username.setText("Username");
-            password.setText("Password");
-            password.setEchoChar((char)0);
-        }else{
-            dashBoard db = new dashBoard();
-            db.setVisible(true);
-
-            this.setVisible(false);
-            this.setDefaultCloseOperation(this.HIDE_ON_CLOSE);
-            this.dispose();
-        }
+      
     }//GEN-LAST:event_LoginMouseClicked
 
     private void LoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LoginActionPerformed
@@ -310,50 +305,45 @@ public class loginForm extends javax.swing.JFrame {
            // this.dispose();
         
         
-         PreparedStatement ps;      
-        ResultSet rs;
-        
-        // get the username & password
-        String user = username.getText();
-        String pass = String.valueOf(password.getPassword());
-         
+       PreparedStatement ps;      
+ResultSet rs;
+
+// get the username & password
+String user = username.getText();
+String pass = String.valueOf(password.getPassword());
+
+String query = "SELECT * FROM `user_db` WHERE `user_name`= ? AND `pass_word` = ?";
+
+try {
+    ps = login_db.getConnection().prepareStatement(query);
+
+    ps.setString(1, user);
+    ps.setString(2, hashPassword(pass)); // hash the password before querying the database
+
+    rs = ps.executeQuery();
+
+    if(rs.next())
+    {
+       dashBoard db = new dashBoard();
+       db.setVisible(true);
+       db.pack();
+       db.setLocationRelativeTo(null);
+
+       db.userni.setText("Welcome "+user+ "!");
        
-        String query = "SELECT * FROM `user_db` WHERE `user_name`= ? AND `pass_word` = ?";
-        
-      
+       this.dispose();
+
+    }
+    else{
        
-            
-            try {
-            ps = login_db.getConnection().prepareStatement(query);
-          
-            
-            ps.setString(1, user);
-            ps.setString(2, pass);
-            
-            rs = ps.executeQuery();
-            
-            if(rs.next())
-            {
-               dashBoard db = new dashBoard();
-               db.setVisible(true);
-               db.pack();
-               db.setLocationRelativeTo(null);
-              
-               db.userni.setText("Welcome "+user+ "!");
-               
-               this.dispose();
-                
-            }
-            else{
-               
-               JOptionPane.showMessageDialog(null, "Incorrect Username or Password");
-            }
-            
-        } catch (SQLException ex) {
-            Logger.getLogger(loginForm.class.getName()).log(Level.SEVERE, null, ex);
-        }
-            
-        
+       JOptionPane.showMessageDialog(null, "Incorrect Username or Password");
+    }
+
+} catch (SQLException ex) {
+    Logger.getLogger(loginForm.class.getName()).log(Level.SEVERE, null, ex);
+} catch (NoSuchAlgorithmException ex) {
+    Logger.getLogger(loginForm.class.getName()).log(Level.SEVERE, null, ex);
+}
 
         
         

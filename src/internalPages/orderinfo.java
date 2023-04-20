@@ -301,6 +301,7 @@ public class orderinfo extends javax.swing.JInternalFrame {
     private void logoutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_logoutMouseClicked
        JFrame mainFrame = (JFrame)SwingUtilities.getWindowAncestor(this);
        mainFrame.dispose();
+       
        loginForm lf = new loginForm();
        lf.setVisible(true);
                
